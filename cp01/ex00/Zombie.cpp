@@ -3,22 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ohachami <ohachami@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 22:16:35 by ohachami          #+#    #+#             */
-/*   Updated: 2023/12/04 22:16:39 by ohachami         ###   ########.fr       */
+/*   Updated: 2023/12/08 08:22:57 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie* newZombie( std::string name ){
-    Zombie *z;
-
-    z = new Zombie;
-    
+void Zombie::announce( void ){
+    std::cout<< this->name<< ": BraiiiiiiinnnzzzZ..."<< std::endl;
 }
 
-void randomChump( std::string name ){
-
-}

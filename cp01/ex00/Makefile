@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ohachami <ohachami@student.1337.ma>        +#+  +:+       +#+         #
+#    By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/22 16:09:34 by ohachami          #+#    #+#              #
-#    Updated: 2023/11/22 16:09:41 by ohachami         ###   ########.fr        #
+#    Updated: 2023/12/08 08:28:38 by ohachami         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,10 @@ CC= c++
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = Zombie.cpp
+SRC = 	Zombie.cpp\
+		randomChump.cpp\
+		newZombie.cpp\
+		main.cpp
 
 OBJ = $(SRC:.cpp=.o)
 

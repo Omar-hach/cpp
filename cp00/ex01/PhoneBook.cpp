@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ohachami <ohachami@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 16:10:07 by ohachami          #+#    #+#             */
-/*   Updated: 2023/11/22 16:11:08 by ohachami         ###   ########.fr       */
+/*   Updated: 2023/12/08 07:44:47 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,21 +54,41 @@ void	PhoneBook::Add_Contact(){
 
 void	PhoneBook::Search_Contact(){
 	int i = 0;
-	int j;
+	int j = 0;
 	std::string reset;
 	std::string num;
 
 	while (phone[i].get_parameter("last name").length() > 0)
 		i++;
+	while(j < i)
+	{
+		std::cout << j + 1 << "|";
+		reset = phone[j].get_parameter("first name") + "|" + phone[j].get_parameter("last name") + "|" + phone[j].get_parameter("nickname");
+		if(reset.length() < 8)
+		{
+			std::cout << reset << "." << std::endl;
+			return ;
+		}
+		std::cout << reset.substr(0, 7) << "." << std::endl;
+		reset = reset.substr(7, reset.length() - 7);
+		while(reset.length() > 9)
+		{
+			std::cout << reset.substr(0, 9) << "." << std::endl;
+			reset = reset.substr(9, reset.length() - 9);
+		}
+		std::cout << reset << "." << std::endl;
+		j++;
+	}
 	std::cout <<"enter index" << std::endl;
 	std::cin >> j;
-	if((j > 9 || j < 0) || j >= i)
+	if((j > 10 || j < 0) || j >= i + 1)
 		std::cout <<"this index don\'t exit" << std::endl;
 	else
 	{
 		//std::cout << "index|first name|last name|nickname" << std::endl;
-		std::cout << j + 1 << "|";
-		reset = phone[j].get_parameter("first name") + "|" + phone[j].get_parameter("last name") + "|" + phone[j].get_parameter("nickname");
+		std::cout << j << "|";
+		reset = phone[j].get_parameter("first name") + "|" + phone[j].get_parameter("last name") + "|" + phone[j].get_parameter("nickname")
+			  	+ "|" + phone[j].get_parameter("phone number") + "|" + phone[j].get_parameter("darkest secret");
 		if(reset.length() < 8)
 		{
 			std::cout << reset << "." << std::endl;
