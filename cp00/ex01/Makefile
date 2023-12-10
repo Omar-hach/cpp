@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ohachami <ohachami@student.1337.ma>        +#+  +:+       +#+         #
+#    By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/22 16:09:34 by ohachami          #+#    #+#              #
-#    Updated: 2023/11/22 16:09:41 by ohachami         ###   ########.fr        #
+#    Updated: 2023/12/09 07:16:13 by ohachami         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,15 +16,15 @@ CC= c++
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC =	 PhoneBook.cpp\
-		main.cpp\
-		Contact.cpp
+SRC =	PhoneBook.cpp\
+		Contact.cpp\
+		main.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
+$(NAME): $(OBJ) *.hpp
 	$(CC) $(FLAGS) $(OBJ) -o $(NAME)
 
 clean:

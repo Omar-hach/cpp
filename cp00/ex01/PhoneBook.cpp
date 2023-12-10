@@ -6,7 +6,7 @@
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 16:10:07 by ohachami          #+#    #+#             */
-/*   Updated: 2023/12/08 07:44:47 by ohachami         ###   ########.fr       */
+/*   Updated: 2023/12/10 06:23:58 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,93 +17,112 @@ PhoneBook::PhoneBook(){
 	return;
 }
 
+int is_num(std::string num)
+{
+	int j = 0;
+	
+	while(num[j] == ' ' || num[j] == '\t')
+		j++;
+	while (num[j] && isdigit(num[j]))
+		j++;
+	if (num[j] == '+' && num[j] == '-')
+		j++;
+	while(num[j] == ' ' || num[j] == '\t')
+		j++;
+	if (j < num.length())
+		return (0);
+	return (1);
+}
+
+void get_input(std::string msg, std::string type, Contact *phone)
+{
+	int i = 0;
+	std::string input;
+
+	std::cout << msg << std::endl;
+	std::getline(std::cin, input);
+	if(std::cin.eof())
+		exit(0);
+	while(phone->set_parameter(input, type))
+	{
+		std::cout << "wrong please " << msg << std::endl;
+		std::getline(std::cin, input);
+		if(std::cin.eof())
+			exit(0);
+	}
+}
+
 void	PhoneBook::Add_Contact(){
 
 	int i = 0;
-	int j = 0;
-	std::string input;
+	static int index;
 
-	while (phone[i].get_parameter("first name").length() > 0)
+	while (phone[i].get_parameter("last name").length() > 0)
 		i++;
-	if(i >= 8)
-		i = 0;//problem here
-	std::cout <<"enter first name" << std::endl;
-	std::getline(std::cin, input);
-	phone[i].set_parameter(input, "first name");
-	std::cout << input << "i ="<<i<< std::endl;
-	std::cout << "enter last name" << std::endl;
-	std::getline(std::cin, input);
-	phone[i].set_parameter(input, "last name");
-	std::cout << input << std::endl;
-	std::cout <<"enter nickname" << std::endl;
-	std::getline(std::cin, input);
-	phone[i].set_parameter(input, "nickname");
-	input.clear();
-	std::cout <<"enter phone number (numbers only)" << std::endl;
-	std::getline(std::cin, input);
-	while(phone[i].set_parameter(input, "phone number"))
+	if(i >= 3)
 	{
-		input.clear();
-		std::cout <<"wrong please enter phone number (numbers only)" << std::endl;
-		std::getline(std::cin, input);
+		if(index >= 3)
+			index = 0;
+		i = index;
+		index++;
 	}
-	std::cout <<"enter darkest secret" << std::endl;
-	std::getline(std::cin, input);
-	phone[i].set_parameter(input, "darkest secret");
+	get_input("enter first name", "first name", &phone[i]);
+	get_input("enter last name", "last name", &phone[i]);
+	get_input("enter nickname", "nickname", &phone[i]);
+	get_input("enter phone number", "phone number", &phone[i]);
+	get_input("enter darkest secret", "darkest secret", &phone[i]);
+}
+
+void	put_param(std::string param){
+	int k = 0;
+
+	if(param.length() < 11){
+		while(k++ < 10 - param.length())
+			std::cout << " ";
+		std::cout << param << "|";
+	}
+	else{
+		std::cout << param.substr(0, 9) << ".|";
+	}
 }
 
 void	PhoneBook::Search_Contact(){
 	int i = 0;
 	int j = 0;
-	std::string reset;
 	std::string num;
 
 	while (phone[i].get_parameter("last name").length() > 0)
 		i++;
-	while(j < i)
-	{
-		std::cout << j + 1 << "|";
-		reset = phone[j].get_parameter("first name") + "|" + phone[j].get_parameter("last name") + "|" + phone[j].get_parameter("nickname");
-		if(reset.length() < 8)
-		{
-			std::cout << reset << "." << std::endl;
-			return ;
-		}
-		std::cout << reset.substr(0, 7) << "." << std::endl;
-		reset = reset.substr(7, reset.length() - 7);
-		while(reset.length() > 9)
-		{
-			std::cout << reset.substr(0, 9) << "." << std::endl;
-			reset = reset.substr(9, reset.length() - 9);
-		}
-		std::cout << reset << "." << std::endl;
+	if(i > 3)
+		i = 3;
+	std::cout << "---------------------------------------------" << std::endl;
+	std::cout << "|     index|first name| last name|  nickname|" << std::endl;
+	std::cout << "---------------------------------------------" << std::endl;
+	while(j < i){
+		std::cout << "|         " << j + 1 << "|";
+		put_param(phone[j].get_parameter("first name"));
+		put_param(phone[j].get_parameter("last name"));
+		put_param(phone[j].get_parameter("nickname"));
 		j++;
+		std::cout << std::endl << "---------------------------------------------" << std::endl;
 	}
-	std::cout <<"enter index" << std::endl;
-	std::cin >> j;
-	if((j > 10 || j < 0) || j >= i + 1)
+	std::cout <<"enter index for more informations" << std::endl;
+	std::getline(std::cin, num);
+	if(!is_num(num)){
+		std::cout <<"this index don\'t exit" << std::endl;
+		return;
+	}
+	j = atoi(num.c_str());
+	if(num.length() > 9 || j > 9 || j <= 0 || j >= i + 1)
 		std::cout <<"this index don\'t exit" << std::endl;
 	else
 	{
-		//std::cout << "index|first name|last name|nickname" << std::endl;
-		std::cout << j << "|";
-		reset = phone[j].get_parameter("first name") + "|" + phone[j].get_parameter("last name") + "|" + phone[j].get_parameter("nickname")
-			  	+ "|" + phone[j].get_parameter("phone number") + "|" + phone[j].get_parameter("darkest secret");
-		if(reset.length() < 8)
-		{
-			std::cout << reset << "." << std::endl;
-			return ;
-		}
-		std::cout << reset.substr(0, 7) << "." << std::endl;
-		reset = reset.substr(7, reset.length() - 7);
-		while(reset.length() > 9)
-		{
-			std::cout << reset.substr(0, 9) << "." << std::endl;
-			reset = reset.substr(9, reset.length() - 9);
-		}
-		std::cout << reset << "." << std::endl;
-		/*std::cout << reset.substr(0, 8) << ".";
-		std::cout << "." << std::endl;*/
+		j--;
+		std::cout << "first name : " << phone[j].get_parameter("first name") << std::endl;
+		std::cout << "last name : " << phone[j].get_parameter("last name") << std::endl;
+		std::cout << "nickname : " << phone[j].get_parameter("nickname") << std::endl;
+		std::cout << "phone number : " << phone[j].get_parameter("phone number") << std::endl;
+		std::cout << "darkest secret : " << phone[j].get_parameter("darkest secret") << std::endl;
 	}
 }
 

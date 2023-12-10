@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ohachami <ohachami@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 08:03:07 by ohachami          #+#    #+#             */
-/*   Updated: 2023/12/07 08:03:09 by ohachami         ###   ########.fr       */
+/*   Updated: 2023/12/09 07:42:04 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,10 @@ int main(){
 
 	while (1)
 	{
-		std::cin >> order;
-		if(order == "ADD")
+		std::getline(std::cin, order);
+		if(std::cin.eof())
+			exit(0);
+		if(order == "ADD" )
 			pb.Add_Contact();
 		else if(order == "SEARCH")
 			pb.Search_Contact();
