@@ -6,7 +6,7 @@
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 08:03:07 by ohachami          #+#    #+#             */
-/*   Updated: 2023/12/09 07:42:04 by ohachami         ###   ########.fr       */
+/*   Updated: 2023/12/12 18:01:57 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	PhoneBook::Search_all_Contact(){
 int main(){
 	PhoneBook 	pb;
 	std::string order;
-
+	
 	while (1)
 	{
 		std::getline(std::cin, order);
@@ -43,8 +43,6 @@ int main(){
 			pb.Search_Contact();
 		else if(order == "EXIT")
 			pb.Exit_Phone();
-		else if(order == "ALL")
-			pb.Search_all_Contact();
 		std::cout <<"enter a command (ADD, SEARCH and EXIT)..."<< std::endl;
 	}
 	

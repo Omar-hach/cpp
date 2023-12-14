@@ -6,19 +6,31 @@
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 22:16:16 by ohachami          #+#    #+#             */
-/*   Updated: 2023/12/12 18:03:47 by ohachami         ###   ########.fr       */
+/*   Updated: 2023/12/12 18:52:03 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+# include "HumanB.hpp"
+# include "HumanA.hpp"
 
 int main()
 {
-	int i =0;
-	Zombie *Chemical_z;
-	
-	randomChump("nemesis");
-	Chemical_z = newZombie("green monster");
-	Chemical_z->announce();
-	delete Chemical_z;
+    {
+        Weapon club = Weapon("crude spiked club");
+
+        HumanA bob("Bob", club);
+        bob.attack();
+        club.setType("some other type of club");
+        bob.attack();
+    }
+    {
+        Weapon club = Weapon("crude spiked club");
+
+        HumanB jim("Jim");
+        jim.setWeapon(club);
+        jim.attack();
+        club.setType("some other type of club");
+        jim.attack();
+    }
+    return 0;
 }

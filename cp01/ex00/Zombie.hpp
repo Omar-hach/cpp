@@ -6,7 +6,7 @@
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 22:16:43 by ohachami          #+#    #+#             */
-/*   Updated: 2023/12/08 08:21:47 by ohachami         ###   ########.fr       */
+/*   Updated: 2023/12/12 18:05:01 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,12 @@ class Zombie{
 	public:
 		Zombie(void);
 		~Zombie(void);
-		Zombie* newZombie( std::string name );
-		void randomChump( std::string name );
 		void announce( void );
-		void name_Zombie(std::string name);
+		void set_name(std::string name);
+		std::string get_name(void);
 };
+
+Zombie*	newZombie( std::string name );
+void randomChump( std::string name );
+
 #endif

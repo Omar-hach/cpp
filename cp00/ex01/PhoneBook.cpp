@@ -6,7 +6,7 @@
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 16:10:07 by ohachami          #+#    #+#             */
-/*   Updated: 2023/12/10 06:23:58 by ohachami         ###   ########.fr       */
+/*   Updated: 2023/12/12 15:11:15 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ PhoneBook::PhoneBook(){
 int is_num(std::string num)
 {
 	int j = 0;
-	
+
 	while(num[j] == ' ' || num[j] == '\t')
 		j++;
 	while (num[j] && isdigit(num[j]))

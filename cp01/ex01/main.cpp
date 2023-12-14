@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/19 13:19:15 by ohachami          #+#    #+#             */
-/*   Updated: 2023/12/12 15:07:30 by ohachami         ###   ########.fr       */
+/*   Created: 2023/12/04 22:16:16 by ohachami          #+#    #+#             */
+/*   Updated: 2023/12/12 16:07:16 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<iostream>
+#include "Zombie.hpp"
 
-int main(int av, char **ac)
+int main()
 {
-	int i = 0;
-	int j = -1;
+    Zombie *zombie_army;
+    int N = 3;
 
-	if (av == 1)
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" <<std::endl;
-	else
-	{
-		while(++i < av)
-		{
-			j = -1;
-			while(ac[i][++j])
-				std::cout << (char)toupper(ac[i][j]);
-		}
-		std::cout <<""<< std::endl;
-	}
+    zombie_army = zombieHorde(N, "boo");
+    for(int i = 0; i < N; i++)
+        zombie_army[i].announce();
+    delete [] zombie_army;
+    system("leaks $(ps | grep Zombie | awk '{if (NR==1) print$1}')");
 }

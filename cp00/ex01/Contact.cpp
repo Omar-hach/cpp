@@ -6,7 +6,7 @@
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 08:03:25 by ohachami          #+#    #+#             */
-/*   Updated: 2023/12/09 07:55:50 by ohachami         ###   ########.fr       */
+/*   Updated: 2023/12/12 18:03:02 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int is_empty(std::string str)
 {
 	int j = 0;
 	
-	while(str[j] == ' ' || str[j] == '\t')
+	while (str[j] == ' ' || str[j] == '\t')
 		j++;
 	if (j < str.length())
 		return (1);

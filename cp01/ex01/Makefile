@@ -6,7 +6,7 @@
 #    By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/22 16:09:34 by ohachami          #+#    #+#              #
-#    Updated: 2023/12/12 18:06:23 by ohachami         ###   ########.fr        #
+#    Updated: 2023/12/12 15:58:32 by ohachami         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,8 +17,7 @@ CC= c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC = 	Zombie.cpp\
-		randomChump.cpp\
-		newZombie.cpp\
+		zombieHorde.cpp\
 		main.cpp
 
 OBJ = $(SRC:.cpp=.o)
