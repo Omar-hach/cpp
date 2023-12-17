@@ -6,7 +6,7 @@
 #    By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/22 16:09:34 by ohachami          #+#    #+#              #
-#    Updated: 2023/12/15 22:11:17 by ohachami         ###   ########.fr        #
+#    Updated: 2023/12/17 16:16:19 by ohachami         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,9 +16,7 @@ CC= c++
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = 	HumanB.cpp\
-		HumanA.cpp\
-		Weapon.cpp\
+SRC = 	Harl.cpp\
 		main.cpp
 
 OBJ = $(SRC:.cpp=.o)

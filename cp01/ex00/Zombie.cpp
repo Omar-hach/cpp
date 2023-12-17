@@ -6,7 +6,7 @@
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 22:16:35 by ohachami          #+#    #+#             */
-/*   Updated: 2023/12/12 15:52:37 by ohachami         ###   ########.fr       */
+/*   Updated: 2023/12/17 17:03:24 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ std::string Zombie::get_name(void){
 }
 
 Zombie::Zombie(void){
-	return ;
+	std::cout << "object " << this->name << " created"<< std::endl;
 }
 
 Zombie::~Zombie(void){
-	return ;
+	std::cout << "object " << this->name << " destroyed"<< std::endl;
 }

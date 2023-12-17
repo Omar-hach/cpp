@@ -6,7 +6,7 @@
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 16:10:07 by ohachami          #+#    #+#             */
-/*   Updated: 2023/12/12 15:11:15 by ohachami         ###   ########.fr       */
+/*   Updated: 2023/12/17 16:26:43 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,9 +59,9 @@ void	PhoneBook::Add_Contact(){
 
 	while (phone[i].get_parameter("last name").length() > 0)
 		i++;
-	if(i >= 3)
+	if(i >= 8)
 	{
-		if(index >= 3)
+		if(index >= 8)
 			index = 0;
 		i = index;
 		index++;
@@ -93,12 +93,13 @@ void	PhoneBook::Search_Contact(){
 
 	while (phone[i].get_parameter("last name").length() > 0)
 		i++;
-	if(i > 3)
-		i = 3;
+	if(i > 8)
+		i = 8;
 	std::cout << "---------------------------------------------" << std::endl;
 	std::cout << "|     index|first name| last name|  nickname|" << std::endl;
 	std::cout << "---------------------------------------------" << std::endl;
-	while(j < i){
+	while(j < i)
+	{
 		std::cout << "|         " << j + 1 << "|";
 		put_param(phone[j].get_parameter("first name"));
 		put_param(phone[j].get_parameter("last name"));

@@ -6,27 +6,11 @@
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 08:03:07 by ohachami          #+#    #+#             */
-/*   Updated: 2023/12/12 18:01:57 by ohachami         ###   ########.fr       */
+/*   Updated: 2023/12/17 16:28:16 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
-
-// DO NOT PUSH
-int	PhoneBook::Search_all_Contact(){
-	int i = 0;
-	int j = 0;
-
-	while (phone[i].get_parameter("first name").length() > 0)
-		i++;
-	while(j < i)
-	{
-		std::cout << j + 1 <<"|"<< phone[j].get_parameter("first name") <<"|"<< phone[j].get_parameter("last name") <<"|"<< phone[j].get_parameter("nickname") << "." << std::endl;
-		j++;
-	}
-	return (1);
-}
-// DO NOT PUSH
 
 int main(){
 	PhoneBook 	pb;

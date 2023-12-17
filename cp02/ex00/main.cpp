@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/04 23:28:53 by ohachami          #+#    #+#             */
-/*   Updated: 2023/12/17 16:25:03 by ohachami         ###   ########.fr       */
+/*   Created: 2023/12/04 22:16:16 by ohachami          #+#    #+#             */
+/*   Updated: 2023/12/17 17:23:41 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
-# include "Contact.hpp"
+#include <iostream>
 
-class PhoneBook {
-	private:
-		Contact phone[9];
-	public:
-		PhoneBook(void);
-		~PhoneBook(void);
-		void Add_Contact();
-		void Search_Contact();
-		void Exit_Phone();
-		int Search_all_Contact();
-};
+int main( void ) {
+	Fixed a;
+	Fixed b( a );
+	Fixed c;
 
-
-#endif
+	c = b;
+	std::cout << a.getRawBits() << std::endl;
+	std::cout << b.getRawBits() << std::endl;
+	std::cout << c.getRawBits() << std::endl;
+	return 0;
+}
