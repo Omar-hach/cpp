@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
+/*   By: omarino <omarino@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 22:16:16 by ohachami          #+#    #+#             */
-/*   Updated: 2023/12/17 17:23:41 by ohachami         ###   ########.fr       */
+/*   Updated: 2023/12/18 19:38:51 by omarino          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include "Fixed.hpp"
 
 int main( void ) {
 	Fixed a;

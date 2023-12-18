@@ -3,20 +3,20 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+         #
+#    By: omarino <omarino@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/22 16:09:34 by ohachami          #+#    #+#              #
-#    Updated: 2023/12/17 16:16:19 by ohachami         ###   ########.fr        #
+#    Updated: 2023/12/18 19:26:25 by omarino          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Zombie
+NAME = Fixed
 
 CC= c++
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = 	Harl.cpp\
+SRC = 	Fixed.cpp\
 		main.cpp
 
 OBJ = $(SRC:.cpp=.o)
