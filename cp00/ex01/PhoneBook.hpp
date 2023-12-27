@@ -6,7 +6,7 @@
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 23:28:53 by ohachami          #+#    #+#             */
-/*   Updated: 2023/12/17 16:25:03 by ohachami         ###   ########.fr       */
+/*   Updated: 2023/12/17 19:55:30 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ class PhoneBook {
 		void Add_Contact();
 		void Search_Contact();
 		void Exit_Phone();
-		int Search_all_Contact();
 };
 
 

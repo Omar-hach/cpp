@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ohachami <ohachami@student.1337.ma>        +#+  +:+       +#+         #
+#    By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/21 21:06:19 by ohachami          #+#    #+#              #
-#    Updated: 2023/11/21 21:06:21 by ohachami         ###   ########.fr        #
+#    Updated: 2023/12/20 00:30:41 by ohachami         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = megaphone
 
 CC= c++
 
-FLAGS = -Wall -Wextra -Werror -std=c++98
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC = megaphone.cpp
 
@@ -23,10 +23,10 @@ OBJ = $(SRC:.cpp=.o)
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(FLAGS) $(OBJ) -o $(NAME)
+	$(CC) $(CPPFLAGS) $(OBJ) -o $(NAME)
 
 clean:
-	rm -f *.o
+	rm -f $(OBJ)
 
 fclean: clean
 	rm -f $(NAME)

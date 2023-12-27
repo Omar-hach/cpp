@@ -6,7 +6,7 @@
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 18:54:17 by ohachami          #+#    #+#             */
-/*   Updated: 2023/12/17 17:11:54 by ohachami         ###   ########.fr       */
+/*   Updated: 2023/12/24 03:09:41 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,8 @@ void HumanA::setWeapon(Weapon& killer){
     this->killer = killer;
 }
 
-HumanA::HumanA(std::string name, Weapon killer){
-    setWeapon(killer);
-    setName(name);
-    std::cout << "HumanA object " << this->name << " created with " << this->killer.getType() << std::endl;
+HumanA::HumanA(std::string name, Weapon &killer) : name(name), killer(killer) {
 }
 
 HumanA::~HumanA(){
-    std::cout << "HumanA object " << this->name << " destroyed"<< std::endl;
 }

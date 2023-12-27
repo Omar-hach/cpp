@@ -6,7 +6,7 @@
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 18:54:51 by ohachami          #+#    #+#             */
-/*   Updated: 2023/12/14 13:19:01 by ohachami         ###   ########.fr       */
+/*   Updated: 2023/12/19 22:06:21 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Weapon{
 		Weapon(std::string type);
 		Weapon(void);
 		~Weapon(void);
-		std::string getType( void );
+		const std::string& getType( void ) const;
 		void setType( std::string name );
 };
 #endif

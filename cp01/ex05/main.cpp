@@ -6,13 +6,13 @@
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 22:16:16 by ohachami          #+#    #+#             */
-/*   Updated: 2023/12/17 19:15:52 by ohachami         ###   ########.fr       */
+/*   Updated: 2023/12/24 03:05:07 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 
-int main(int av, char **ac)
+int main()
 {
     Harl karen;
 
@@ -20,6 +20,5 @@ int main(int av, char **ac)
     karen.complain("INFO");
     karen.complain("ERROR");
     karen.complain("WARNING");
-
     
 }

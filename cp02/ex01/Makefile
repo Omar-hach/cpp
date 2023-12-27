@@ -6,28 +6,30 @@
 #    By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/22 16:09:34 by ohachami          #+#    #+#              #
-#    Updated: 2023/12/17 16:16:19 by ohachami         ###   ########.fr        #
+#    Updated: 2023/12/21 05:25:53 by ohachami         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Zombie
+NAME = Fixed
 
 CC= c++
 
-FLAGS = -Wall -Wextra -Werror -std=c++98
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = 	Harl.cpp\
+SRC = 	Fixed.cpp\
 		main.cpp
+
+HEADER = Fixed.hpp
 
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJ) *.hpp
-	$(CC) $(FLAGS) $(OBJ) -o $(NAME)
+$(NAME): $(OBJ) $(HEADER)
+	$(CC) $(CPPFLAGS) $(OBJ) -o $(NAME)
 
 clean:
-	rm -f *.o
+	rm -f $(OBJ)
 
 fclean: clean
 	rm -f $(NAME)

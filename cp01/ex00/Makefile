@@ -6,7 +6,7 @@
 #    By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/22 16:09:34 by ohachami          #+#    #+#              #
-#    Updated: 2023/12/15 22:10:46 by ohachami         ###   ########.fr        #
+#    Updated: 2023/12/20 00:30:41 by ohachami         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = Zombie
 
 CC= c++
 
-FLAGS = -Wall -Wextra -Werror -std=c++98
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC = 	Zombie.cpp\
 		randomChump.cpp\
@@ -23,13 +23,15 @@ SRC = 	Zombie.cpp\
 
 OBJ = $(SRC:.cpp=.o)
 
+HEADER = Zombie.hpp
+
 all: $(NAME)
 
-$(NAME): $(OBJ) *.hpp
-	$(CC) $(FLAGS) $(OBJ) -o $(NAME)
+$(NAME): $(OBJ) $(HEADER)
+	$(CC) $(CPPFLAGS) $(OBJ) -o $(NAME)
 
 clean:
-	rm -f *.o
+	rm -f $(OBJ)
 
 fclean: clean
 	rm -f $(NAME)

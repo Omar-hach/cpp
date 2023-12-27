@@ -6,7 +6,7 @@
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 17:24:18 by ohachami          #+#    #+#             */
-/*   Updated: 2023/12/17 18:05:17 by ohachami         ###   ########.fr       */
+/*   Updated: 2023/12/23 08:15:45 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,10 @@ class Fixed{
     public:
         Fixed( void );
         ~Fixed( void );
+        Fixed(const Fixed &object);
+        Fixed& operator=(Fixed const& F);
         int getRawBits( void ) const;
         void setRawBits( int const raw );
-    
 };
 
 #endif

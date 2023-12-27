@@ -6,11 +6,9 @@
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 22:16:16 by ohachami          #+#    #+#             */
-/*   Updated: 2023/12/12 18:51:03 by ohachami         ###   ########.fr       */
+/*   Updated: 2023/12/18 22:55:43 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "Zombie.hpp"
 
 # include<iostream>
 
