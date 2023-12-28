@@ -6,7 +6,7 @@
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/22 07:48:18 by ohachami          #+#    #+#             */
-/*   Updated: 2023/12/26 10:34:20 by ohachami         ###   ########.fr       */
+/*   Updated: 2023/12/27 11:09:07 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ ClapTrap::ClapTrap(const ClapTrap &object){
 }
 
 
-ClapTrap& ClapTrap::operator=(ClapTrap const& object){
+ClapTrap& ClapTrap::operator=(ClapTrap& const object){
 	this->Name = object.Name;
 	this->Attack_damage = object.Attack_damage;
 	this->Energy_points = object.Energy_points;

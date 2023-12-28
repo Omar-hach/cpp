@@ -6,7 +6,7 @@
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 17:24:18 by ohachami          #+#    #+#             */
-/*   Updated: 2023/12/26 12:43:20 by ohachami         ###   ########.fr       */
+/*   Updated: 2023/12/27 09:53:40 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,11 @@ class Fixed{
 		void setRawBits( int const raw );
 		float toFloat( void ) const;
 		int toInt( void ) const;
-		Fixed &operator=(const Fixed& F);
-		Fixed operator+(const Fixed& F);
-		Fixed operator*(const Fixed& F);
-		Fixed operator/(const Fixed& F);
-		Fixed operator-(const Fixed& F);
+		Fixed& operator=(const Fixed& F);
+		Fixed& operator+(const Fixed& F);
+		Fixed& operator*(const Fixed& F);
+		Fixed& operator/(const Fixed& F);
+		Fixed& operator-(const Fixed& F);
 		bool operator!=(const Fixed& F) const;
 		bool operator>(const Fixed& F) const;
 		bool operator>=(const Fixed& F) const;
@@ -41,10 +41,10 @@ class Fixed{
 		bool operator<(const Fixed& F) const;
 		bool operator<=(const Fixed& F) const;
 
-		Fixed &operator++(void);
-		Fixed &operator--(void);
-		Fixed operator++(int const);
-		Fixed operator--(int const);
+		Fixed& operator++(void);
+		Fixed& operator--(void);
+		Fixed& operator++(int const);
+		Fixed& operator--(int const);
 		static Fixed& min(Fixed& F, Fixed& E);
 		static Fixed& min(const Fixed& F, const Fixed& E);
 		static Fixed& max(Fixed& F, Fixed& E);

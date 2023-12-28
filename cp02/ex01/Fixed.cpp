@@ -6,7 +6,7 @@
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 17:24:32 by ohachami          #+#    #+#             */
-/*   Updated: 2023/12/26 11:41:48 by ohachami         ###   ########.fr       */
+/*   Updated: 2023/12/27 11:08:23 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,9 @@ Fixed::Fixed(const float floating){
 	this->integer = round(floating * (1 << fractBits));
 }
 
-void Fixed::operator=(const Fixed& F){
+Fixed& Fixed::operator=(const Fixed& F){
 	this->integer = F.integer;
+	return *this;
 }
 
 int Fixed::getRawBits( void ) const{

@@ -6,7 +6,7 @@
 #    By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/22 16:09:34 by ohachami          #+#    #+#              #
-#    Updated: 2023/12/26 07:51:16 by ohachami         ###   ########.fr        #
+#    Updated: 2023/12/28 15:46:34 by ohachami         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,9 @@ SRC = 	ClapTrap.cpp\
 		FragTrap.cpp\
 		main.cpp
 
-HEADER = ClapTrap.hpp
+HEADER =	ClapTrap.hpp\
+			ScavTrap.hpp\
+			FragTrap.hpp
 
 OBJ = $(SRC:.cpp=.o)
 
@@ -38,4 +40,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: clean fclean re all bonus
+.PHONY: clean fclean re all

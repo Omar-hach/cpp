@@ -6,7 +6,7 @@
 #    By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/22 16:09:34 by ohachami          #+#    #+#              #
-#    Updated: 2023/12/25 08:18:23 by ohachami         ###   ########.fr        #
+#    Updated: 2023/12/28 11:16:06 by ohachami         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,4 +36,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: clean fclean re all bonus
+.PHONY: clean fclean re all

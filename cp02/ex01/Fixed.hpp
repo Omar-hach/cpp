@@ -6,7 +6,7 @@
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 17:24:18 by ohachami          #+#    #+#             */
-/*   Updated: 2023/12/26 11:38:34 by ohachami         ###   ########.fr       */
+/*   Updated: 2023/12/27 09:52:56 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class Fixed{
 		Fixed(const Fixed &object);
 		Fixed(const int intgr);
 		Fixed(const float floating);
-		void operator=(const Fixed& F);
+		Fixed& operator=(const Fixed& F);
 		int getRawBits( void ) const;
 		void setRawBits( int const raw );
 		float toFloat( void ) const;

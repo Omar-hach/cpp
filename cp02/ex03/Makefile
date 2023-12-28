@@ -6,7 +6,7 @@
 #    By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/22 16:09:34 by ohachami          #+#    #+#              #
-#    Updated: 2023/12/27 04:28:30 by ohachami         ###   ########.fr        #
+#    Updated: 2023/12/28 15:47:14 by ohachami         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,8 @@ SRC = 	Fixed.cpp\
 		bsp.cpp\
 		main.cpp
 
-HEADER = Fixed.hpp
+HEADER =	Fixed.hpp\
+			Point.hpp
 
 OBJ = $(SRC:.cpp=.o)
 
@@ -38,4 +39,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: clean fclean re all bonus
+.PHONY: clean fclean re all

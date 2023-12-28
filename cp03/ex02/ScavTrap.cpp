@@ -6,7 +6,7 @@
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/25 09:40:43 by ohachami          #+#    #+#             */
-/*   Updated: 2023/12/26 07:37:02 by ohachami         ###   ########.fr       */
+/*   Updated: 2023/12/27 11:27:15 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ ScavTrap& ScavTrap::operator=(ScavTrap const& object){
 	this->Name = object.Name;
 	this->Attack_damage = object.Attack_damage;
 	this->Energy_points = object.Energy_points;
-	this->Attack_damage = object.Attack_damage;
+	this->Hit_points = object.Hit_points;
 	return *this;
 }
 

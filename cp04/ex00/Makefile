@@ -6,24 +6,29 @@
 #    By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/22 16:09:34 by ohachami          #+#    #+#              #
-#    Updated: 2023/12/28 15:47:45 by ohachami         ###   ########.fr        #
+#    Updated: 2023/12/28 15:40:01 by ohachami         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = PhoneBook
+NAME = Animal
 
 CC= c++
 
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC =	PhoneBook.cpp\
-		Contact.cpp\
+SRC = 	WrongCat.cpp\
+		WrongAnimal.cpp\
+		Animal.cpp\
+		Dog.cpp\
+		Cat.cpp\
 		main.cpp
 
-OBJ = $(SRC:.cpp=.o)
+HEADER = Animal.hpp\
+			Dog.hpp\
+			Cat.hpp\
+			WrongAnimal.hpp
 
-HEADER =	Contact.hpp\
-			PhoneBook.hpp
+OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
 

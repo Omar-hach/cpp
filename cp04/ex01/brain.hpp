@@ -1,34 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*   brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/22 07:48:44 by ohachami          #+#    #+#             */
-/*   Updated: 2023/12/27 09:57:06 by ohachami         ###   ########.fr       */
+/*   Created: 2023/12/28 15:48:54 by ohachami          #+#    #+#             */
+/*   Updated: 2023/12/28 15:50:05 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAPTRAP_HPP
-# define CLAPTRAP_HPP
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 # include<iostream>
 
-class ClapTrap{
+class brain{
 	protected:
-		std::string Name;
-		int Hit_points;
-		int Energy_points;
-		int Attack_damage;
+		std::string type;
 	public:
-		ClapTrap( void );
-		ClapTrap( std::string Name );
-		~ClapTrap( void );
-		ClapTrap(const ClapTrap& object);
-		ClapTrap& operator=(ClapTrap& const object);
-		void attack(const std::string& target);
-		void takeDamage(unsigned int amount);
-		void beRepaired(unsigned int amount);
+		brain( void );
+		~brain( void );
+		brain(const brain& object);
+		brain& operator=(const brain& object);
+		std::string getType( void) const;
+		void makeSound( void );
 };
-
-#endif       

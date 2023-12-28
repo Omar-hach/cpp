@@ -6,7 +6,7 @@
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 17:24:32 by ohachami          #+#    #+#             */
-/*   Updated: 2023/12/27 07:26:00 by ohachami         ###   ########.fr       */
+/*   Updated: 2023/12/27 09:55:48 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,26 +38,27 @@ Fixed::Fixed(const float floating){
 	this->integer = round(floating * (1 << fractBits));
 }
 
-void Fixed::operator=(const Fixed& F){
+Fixed& Fixed::operator=(const Fixed& F){
 	this->integer = F.integer;
+	return *this;
 }
 
-Fixed Fixed::operator+(const Fixed& F){
+Fixed& Fixed::operator+(const Fixed& F){
 	Fixed  tmp;
 	tmp.integer = ((this->integer + F.integer));
 	return tmp;
 }
-Fixed Fixed::operator*(const Fixed& F){
+Fixed& Fixed::operator*(const Fixed& F){
 	Fixed  tmp;
 	tmp.integer = ((this->integer * F.integer) >> (fractBits));
 	return tmp;
 }
-Fixed Fixed::operator/(const Fixed& F){
+Fixed& Fixed::operator/(const Fixed& F){
 	Fixed  tmp;
 	tmp.integer = round(((float) this->integer / F.integer ) * (1 << fractBits));
 	return tmp;
 }
-Fixed Fixed::operator-(const Fixed& F){
+Fixed& Fixed::operator-(const Fixed& F){
 	Fixed  tmp;
 	tmp.integer = ((this->integer - F.integer));
 	return tmp;
@@ -121,16 +122,16 @@ Fixed &Fixed::operator++(void){
 	this->integer++;
 	return *this;
 }
-Fixed &Fixed::operator--(void){
+Fixed& Fixed::operator--(void){
 	this->integer--;
 	return *this;
 }
-Fixed Fixed::operator++(int const){
+Fixed& Fixed::operator++(int const){
 	Fixed tmp = *this;
 	this->integer++;
 	return tmp;
 }
-Fixed Fixed::operator--(int const){
+Fixed& Fixed::operator--(int const){
 	Fixed tmp = *this;
 	this->integer--;
 	return tmp;
