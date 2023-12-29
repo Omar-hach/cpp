@@ -6,7 +6,7 @@
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/25 09:40:43 by ohachami          #+#    #+#             */
-/*   Updated: 2023/12/27 11:27:31 by ohachami         ###   ########.fr       */
+/*   Updated: 2023/12/29 18:15:41 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,7 @@ ScavTrap::ScavTrap(const ScavTrap &object){
 	*this = object;
 }
 
-
-ScavTrap& ScavTrap::operator=(ScavTrap const& object){
+ScavTrap& ScavTrap::operator=(const ScavTrap& object){
 	this->Name = object.Name;
 	this->Attack_damage = object.Attack_damage;
 	this->Energy_points = object.Energy_points;
@@ -47,6 +46,10 @@ ScavTrap& ScavTrap::operator=(ScavTrap const& object){
 }
 
 void ScavTrap::attack(const std::string& target){
+	if(this->Hit_points  < 1){
+		std::cout << "ScavTrap " << this->Name << " is already Dead" << std::endl;
+		return ;
+	}
 	if(this->Energy_points < 1){
 		std::cout << "ScavTrap " << this->Name << " does not have enough energy" << std::endl;
 		return ;

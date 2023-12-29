@@ -6,7 +6,7 @@
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 08:12:14 by ohachami          #+#    #+#             */
-/*   Updated: 2023/12/28 12:28:08 by ohachami         ###   ########.fr       */
+/*   Updated: 2023/12/29 11:52:45 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,6 @@ std::string WrongAnimal::getType( void) const{
 	return this->type;
 }
 
-void WrongAnimal::makeSound( void ){
+void WrongAnimal::makeSound( void ) const{
 	std::cout << "Animal noise" << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 08:12:22 by ohachami          #+#    #+#             */
-/*   Updated: 2023/12/28 15:33:54 by ohachami         ###   ########.fr       */
+/*   Updated: 2023/12/29 11:52:50 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class WrongCat : public WrongAnimal{
 		~WrongCat( void );
 		WrongCat(const WrongCat& object);
 		WrongCat& operator=(const WrongCat& object);
-        void makeSound( void );
+        void makeSound( void ) const;
 };
 
 #endif

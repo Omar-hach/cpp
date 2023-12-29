@@ -6,7 +6,7 @@
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 08:17:54 by ohachami          #+#    #+#             */
-/*   Updated: 2023/12/28 15:36:53 by ohachami         ###   ########.fr       */
+/*   Updated: 2023/12/29 11:52:23 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,6 @@ Dog& Dog::operator=(const Dog& object){
 	return *this;
 }
 
-void Dog::makeSound( void ){
+void Dog::makeSound( void ) const{
 	std::cout << "woof" << std::endl;
 }

@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/25 09:40:45 by ohachami          #+#    #+#             */
-/*   Updated: 2023/12/29 12:01:22 by ohachami         ###   ########.fr       */
+/*   Created: 2023/12/27 08:18:00 by ohachami          #+#    #+#             */
+/*   Updated: 2023/12/29 15:57:45 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
-# include"ClapTrap.hpp"
+#include "Dog.hpp"
+#include "Cat.hpp"
+#include "WrongCat.hpp"
 
-class ScavTrap : public ClapTrap{
-	public:
-		ScavTrap( void );
-		ScavTrap( std::string Name );
-		~ScavTrap( void );
-		ScavTrap(const ScavTrap& object);
-		ScavTrap& operator=(const ScavTrap& object);
-		void attack(const std::string& target);
-        void guardGate();
-};
-
-#endif   
+int main()
+{
+	const Animal** meta = new const Animal*[10];
+	for (int k = 0 ; k < 5 ; k++)
+		meta[k] = new Cat();
+	for (int k = 5 ; k < 10 ; k++)
+		meta[k] = new Dog();
+	for (int k = 0 ; k < 10 ; k++)
+		meta[k]->makeSound();
+	for (int k = 0 ; k < 10 ; k++)
+		delete meta[k];
+	delete[] meta;
+	return 0;
+}

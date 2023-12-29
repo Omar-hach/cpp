@@ -6,7 +6,7 @@
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 08:12:17 by ohachami          #+#    #+#             */
-/*   Updated: 2023/12/28 12:26:24 by ohachami         ###   ########.fr       */
+/*   Updated: 2023/12/29 11:52:53 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class WrongAnimal{
 		WrongAnimal(const WrongAnimal& object);
 		WrongAnimal& operator=(const WrongAnimal& object);
 		std::string getType( void) const;
-		void makeSound( void );
+		void makeSound( void ) const;
 };
 
 #endif

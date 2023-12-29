@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   brain.hpp                                          :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/28 15:48:54 by ohachami          #+#    #+#             */
-/*   Updated: 2023/12/28 15:50:05 by ohachami         ###   ########.fr       */
+/*   Created: 2023/12/29 10:48:41 by ohachami          #+#    #+#             */
+/*   Updated: 2023/12/29 17:19:23 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 # define BRAIN_HPP
 # include<iostream>
 
-class brain{
+class Brain{
 	protected:
-		std::string type;
+		std::string *ideas;
 	public:
-		brain( void );
-		~brain( void );
-		brain(const brain& object);
-		brain& operator=(const brain& object);
-		std::string getType( void) const;
-		void makeSound( void );
+		Brain( void );
+		~Brain( void );
+		Brain(const Brain& object);
+		Brain& operator=(const Brain& object);
 };
+
+#endif

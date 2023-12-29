@@ -6,7 +6,7 @@
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/26 07:51:45 by ohachami          #+#    #+#             */
-/*   Updated: 2023/12/27 11:27:11 by ohachami         ###   ########.fr       */
+/*   Updated: 2023/12/29 13:00:31 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,7 @@ FragTrap::FragTrap(const FragTrap &object){
 	*this = object;
 }
 
-
-FragTrap& FragTrap::operator=(FragTrap const& object){
+FragTrap& FragTrap::operator=(const FragTrap& object){
 	this->Name = object.Name;
 	this->Attack_damage = object.Attack_damage;
 	this->Energy_points = object.Energy_points;

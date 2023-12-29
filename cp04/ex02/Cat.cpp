@@ -6,7 +6,7 @@
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 08:17:50 by ohachami          #+#    #+#             */
-/*   Updated: 2023/12/29 17:11:32 by ohachami         ###   ########.fr       */
+/*   Updated: 2023/12/29 12:54:19 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,11 @@
 
 Cat::Cat( void ){
     type = "Cat";
-    livingBrain = new Brain();
 	std::cout << "Constructor Cat called"<< std::endl;
 }
 
 Cat::~Cat( void ){
     std::cout << "Deconstructor Cat called"<< std::endl;
-    if(livingBrain)
-	    delete livingBrain;
 }
 
 Cat::Cat(const Cat& object){
@@ -31,10 +28,6 @@ Cat::Cat(const Cat& object){
 
 Cat& Cat::operator=(const Cat& object){
     this->type = object.type;
-    if (livingBrain)
-		delete livingBrain;
-	livingBrain = new Brain();
-	*this->livingBrain = *object.livingBrain;
 	return *this;
 }
 

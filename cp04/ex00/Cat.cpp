@@ -6,7 +6,7 @@
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 08:17:50 by ohachami          #+#    #+#             */
-/*   Updated: 2023/12/28 15:38:28 by ohachami         ###   ########.fr       */
+/*   Updated: 2023/12/29 11:52:20 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,6 @@ Cat& Cat::operator=(const Cat& object){
 	return *this;
 }
 
-void Cat::makeSound( void ){
+void Cat::makeSound( void ) const{
 	std::cout << "nyaa" << std::endl;
 }
