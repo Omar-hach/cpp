@@ -6,7 +6,7 @@
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 08:18:00 by ohachami          #+#    #+#             */
-/*   Updated: 2023/12/29 12:11:53 by ohachami         ###   ########.fr       */
+/*   Updated: 2023/12/30 09:53:16 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ int main()
     kata->makeSound();
     elephan->makeSound();
 
-    delete meta;
     delete i;
     delete j;
+    delete meta;
     delete elephan;
     delete kata;
     return 0;

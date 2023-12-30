@@ -6,14 +6,14 @@
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 08:17:44 by ohachami          #+#    #+#             */
-/*   Updated: 2023/12/29 11:52:16 by ohachami         ###   ########.fr       */
+/*   Updated: 2023/12/30 09:45:19 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include"Animal.hpp"
 
 Animal::Animal( void ){
-	type = "";
+	type = "Animal";
 	std::cout << "Constructor called"<< std::endl;
 }
 

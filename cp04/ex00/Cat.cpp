@@ -6,7 +6,7 @@
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 08:17:50 by ohachami          #+#    #+#             */
-/*   Updated: 2023/12/29 11:52:20 by ohachami         ###   ########.fr       */
+/*   Updated: 2023/12/30 09:58:52 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Cat::~Cat( void ){
 }
 
 Cat::Cat(const Cat& object){
-	std::cout << "Copy constructor WrongAnimal called"<< std::endl;
+	std::cout << "Copy constructor Cat called"<< std::endl;
     this->type = object.type;
 }
 

@@ -6,7 +6,7 @@
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 08:17:54 by ohachami          #+#    #+#             */
-/*   Updated: 2023/12/29 17:11:45 by ohachami         ###   ########.fr       */
+/*   Updated: 2023/12/30 14:04:26 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,19 @@
 
 Dog::Dog( void ){
     type = "Dog";
-    livingBrain = new Brain();
 	std::cout << "Constructor Dog called"<< std::endl;
+    livingBrain = new Brain();
 }
 
 Dog::~Dog( void ){
-    std::cout << "Deconstructor Dog called"<< std::endl;
     if(livingBrain)
 	    delete livingBrain;
+    std::cout << "Deconstructor Dog called"<< std::endl;
 }
 
 Dog::Dog(const Dog& object){
-	std::cout << "Copy constructor WrongAnimal called"<< std::endl;
-    this->type = object.type;
+	std::cout << "Copy constructor Dog called"<< std::endl;
+    *this = object;
 }
 
 Dog& Dog::operator=(const Dog& object){

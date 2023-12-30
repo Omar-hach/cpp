@@ -6,7 +6,7 @@
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 08:17:47 by ohachami          #+#    #+#             */
-/*   Updated: 2023/12/29 15:59:29 by ohachami         ###   ########.fr       */
+/*   Updated: 2023/12/30 13:25:50 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 
 class Animal{
 	protected:
-		Brain* livingBrain;
 		std::string type;
 	public:
 		Animal( void );
@@ -24,7 +23,7 @@ class Animal{
 		Animal(const Animal& object);
 		Animal& operator=(const Animal& object);
 		std::string getType( void) const;
-		virtual void makeSound( void ) = 0;
+		virtual void makeSound( void ) const = 0;
 };
 
 #endif

@@ -6,14 +6,14 @@
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 08:12:14 by ohachami          #+#    #+#             */
-/*   Updated: 2023/12/29 12:54:19 by ohachami         ###   ########.fr       */
+/*   Updated: 2023/12/30 09:59:53 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include"WrongAnimal.hpp"
 
 WrongAnimal::WrongAnimal( void ){
-	type = "";
+	type = "WrongAnimal";
 	std::cout << "Constructor WrongAnimal called"<< std::endl;
 }
 

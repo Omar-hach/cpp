@@ -6,7 +6,7 @@
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 08:17:54 by ohachami          #+#    #+#             */
-/*   Updated: 2023/12/29 11:52:23 by ohachami         ###   ########.fr       */
+/*   Updated: 2023/12/30 09:58:56 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Dog::~Dog( void ){
 }
 
 Dog::Dog(const Dog& object){
-	std::cout << "Copy constructor WrongAnimal called"<< std::endl;
+	std::cout << "Copy constructor Dog called"<< std::endl;
     this->type = object.type;
 }
 

@@ -6,7 +6,7 @@
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 08:17:57 by ohachami          #+#    #+#             */
-/*   Updated: 2023/12/29 12:54:52 by ohachami         ###   ########.fr       */
+/*   Updated: 2023/12/30 13:25:39 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 # include"Animal.hpp"
 
 class Dog : public Animal{
+	private:
+		Brain* livingBrain;
 	public:
 		Dog( void );
 		~Dog( void );

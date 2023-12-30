@@ -6,7 +6,7 @@
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/29 10:48:41 by ohachami          #+#    #+#             */
-/*   Updated: 2023/12/29 16:05:36 by ohachami         ###   ########.fr       */
+/*   Updated: 2023/12/30 09:08:11 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 class Brain{
 	protected:
-		std::string ideas[100];
+		std::string *ideas;
 	public:
 		Brain( void );
 		~Brain( void );

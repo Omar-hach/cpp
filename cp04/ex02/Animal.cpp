@@ -6,7 +6,7 @@
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 08:17:44 by ohachami          #+#    #+#             */
-/*   Updated: 2023/12/29 16:00:07 by ohachami         ###   ########.fr       */
+/*   Updated: 2023/12/30 13:26:22 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,11 @@
 
 Animal::Animal( void ){
 	type = "animal";
-	livingBrain = new Brain();
 	std::cout << "Constructor called"<< std::endl;
 }
 
 Animal::~Animal( void ){
 	std::cout << "Deconstructor called"<< std::endl;
-	delete livingBrain;
 }
 
 Animal::Animal(const Animal& object){
