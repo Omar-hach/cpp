@@ -6,7 +6,7 @@
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/25 09:40:43 by ohachami          #+#    #+#             */
-/*   Updated: 2023/12/29 18:15:41 by ohachami         ###   ########.fr       */
+/*   Updated: 2023/12/31 10:16:37 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ ScavTrap::ScavTrap( void ){
 	this->Energy_points = 50;
 	this->Attack_damage = 20;
 	this->Name = "";
-	std::cout << "ScavTrap Constructor called"<< std::endl;
+	std::cout << "ScavTrap Default Constructor called"<< std::endl;
 }
 
 ScavTrap::ScavTrap( std::string Name ){
@@ -25,7 +25,7 @@ ScavTrap::ScavTrap( std::string Name ){
 	this->Energy_points = 50;
 	this->Attack_damage = 20;
 	this->Name = Name;
-	std::cout << "ScavTrap Default constructor called"<< std::endl;
+	std::cout << "ScavTrap constructor called"<< std::endl;
 }
 
 ScavTrap::~ScavTrap( void ){
@@ -60,5 +60,13 @@ void ScavTrap::attack(const std::string& target){
 }
 
 void ScavTrap::guardGate( void ){
+	if(this->Hit_points  < 1){
+		std::cout << "ScavTrap " << this->Name << " is already Dead" << std::endl;
+		return ;
+	}
+	if(this->Energy_points < 1){
+		std::cout << "ScavTrap " << this->Name << " does not have enough energy" << std::endl;
+		return ;
+	}
     std::cout << "ScavTrap is garding the Gate" << std::endl;
 }

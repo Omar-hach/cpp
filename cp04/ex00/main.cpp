@@ -6,7 +6,7 @@
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 08:18:00 by ohachami          #+#    #+#             */
-/*   Updated: 2023/12/30 09:53:16 by ohachami         ###   ########.fr       */
+/*   Updated: 2023/12/31 15:52:55 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,24 +18,27 @@ int main()
 {
     const Animal* meta = new Animal();
     const Animal* j = new Dog();
-    const Animal* i = new Cat();
+    const Cat* i = new Cat();
+
+    meta->makeSound();
     std::cout << j->getType() << " " << std::endl;
+    j->makeSound();
+    std::cout << std::endl;
     std::cout << i->getType() << " " << std::endl;
     i->makeSound();
-    j->makeSound();
-    meta->makeSound();
-
-    std::cout << "---------------------------" << std::endl;
-    WrongAnimal* elephan = new WrongAnimal();
-    WrongAnimal* kata = new WrongCat();
-    std::cout << elephan->getType() << " " << std::endl;
-    kata->makeSound();
-    elephan->makeSound();
 
     delete i;
     delete j;
     delete meta;
+
+    std::cout << "---------------------------" << std::endl;
+    WrongAnimal* elephan = new WrongAnimal();
+    WrongAnimal* lion = new WrongCat();
+    std::cout << elephan->getType() << " " << std::endl;
+    lion->makeSound();
+    elephan->makeSound();
+
     delete elephan;
-    delete kata;
+    delete lion;
     return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 08:18:00 by ohachami          #+#    #+#             */
-/*   Updated: 2023/12/30 15:45:29 by ohachami         ###   ########.fr       */
+/*   Updated: 2023/12/31 16:07:34 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,22 +18,22 @@ int main()
 {
 	const Animal* j = new Dog();
     const Cat* i = new Cat();
-    const Animal* k(i);
+
     std::cout << j->getType() << " " << std::endl;
-    std::cout << i->getType() << " " << std::endl;
-    std::cout <<"k = " <<  k->getType() << " " << std::endl;
-    i->makeSound();
     j->makeSound();
-
-    std::cout << "---------------------------" << std::endl;
-
-    WrongAnimal* kata = new WrongCat();
-    std::cout << kata->getType() << " " << std::endl;
-    kata->makeSound();
+    std::cout << std::endl;
+    std::cout << i->getType() << " " << std::endl;
+    i->makeSound();
 
     delete i;
     delete j;
-    delete k;
-    delete kata;
+
+    std::cout << "---------------------------" << std::endl;
+
+    WrongAnimal* lion = new WrongCat();
+    std::cout << lion->getType() << " " << std::endl;
+    lion->makeSound();
+
+    delete lion;
     return 0;
 }

@@ -5,26 +5,32 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/27 08:18:00 by ohachami          #+#    #+#             */
-/*   Updated: 2023/12/31 15:33:55 by ohachami         ###   ########.fr       */
+/*   Created: 2023/12/31 11:58:36 by ohachami          #+#    #+#             */
+/*   Updated: 2024/01/03 19:19:16 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
-#include "Cat.hpp"
-#include "WrongCat.hpp"
+#include "Bureaucrat.hpp"
 
 int main()
-{	
-	const Animal** meta = new const Animal*[10];
-	for (int k = 0 ; k < 5 ; k++)
-		meta[k] = new Cat();
-	for (int k = 5 ; k < 10 ; k++)
-		meta[k] = new Dog();
-	for (int k = 0 ; k < 10 ; k++)
-		meta[k]->makeSound();
-	for (int k = 0 ; k < 10 ; k++)
-		delete meta[k];
-	delete[] meta;
-	return 0;
+{
+    try{
+        Bureaucrat Hamada("Hamada", 50);
+        Bureaucrat yassir;
+
+        std::cout << Hamada << std::endl;
+        Hamada.BureaucratIncrease();
+        yassir = Hamada;
+        Hamada.BureaucratIncrease();
+        Hamada.BureaucratIncrease();
+        Hamada.BureaucratIncrease();
+        std::cout << Hamada << std::endl;
+        Hamada.BureaucratDecrease();
+        std::cout << Hamada << std::endl;
+        std::cout << yassir << std::endl;
+    }
+    catch(std::exception &e)
+    {
+        std::cout << e.what() << std::endl;
+    }
 }

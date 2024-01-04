@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/25 09:40:45 by ohachami          #+#    #+#             */
-/*   Updated: 2023/12/31 10:32:06 by ohachami         ###   ########.fr       */
+/*   Created: 2024/01/04 16:59:57 by ohachami          #+#    #+#             */
+/*   Updated: 2024/01/04 17:08:07 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
-# include"ClapTrap.hpp"
+#ifndef SHRUBBERYCREATIONFORM_HPP
+# define SHRUBBERYCREATIONFORM_HPP
+#include "AForm.hpp"
 
-class ScavTrap : public ClapTrap{
+class Form;
+class ShrubberyCreationForm : public AForm{
 	public:
-		ScavTrap( void );
-		~ScavTrap( void );
-		ScavTrap(const ScavTrap &object);
-		ScavTrap& operator=(const ScavTrap& object);
-		ScavTrap( std::string Name );
-		void attack(const std::string& target);
-        void guardGate();
+		ShrubberyCreationForm( void );
+		~ShrubberyCreationForm( void );
+		ShrubberyCreationForm( std::string Name, int Grade );
+		ShrubberyCreationForm(const ShrubberyCreationForm& object);
 };
 
-#endif   
+std::ostream &operator<<(std::ostream &out, const Bureaucrat& object);
+
+#endif

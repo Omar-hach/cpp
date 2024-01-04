@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/25 09:40:45 by ohachami          #+#    #+#             */
-/*   Updated: 2023/12/31 10:32:06 by ohachami         ###   ########.fr       */
+/*   Created: 2024/01/04 16:59:28 by ohachami          #+#    #+#             */
+/*   Updated: 2024/01/04 17:06:50 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
-# include"ClapTrap.hpp"
+#ifndef PRESIDENTIALPARDONFORM_HPP
+# define PRESIDENTIALPARDONFORM_HPP
+#include "AForm.hpp"
 
-class ScavTrap : public ClapTrap{
+class Form;
+class PresidentialPardonForm : public AForm{
 	public:
-		ScavTrap( void );
-		~ScavTrap( void );
-		ScavTrap(const ScavTrap &object);
-		ScavTrap& operator=(const ScavTrap& object);
-		ScavTrap( std::string Name );
-		void attack(const std::string& target);
-        void guardGate();
+		PresidentialPardonForm( void );
+		~PresidentialPardonForm( void );
+		PresidentialPardonForm( std::string Name, int Grade );
+		PresidentialPardonForm(const PresidentialPardonForm& object);
 };
 
-#endif   
+std::ostream &operator<<(std::ostream &out, const Bureaucrat& object);
+
+#endif

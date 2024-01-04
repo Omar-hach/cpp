@@ -6,7 +6,7 @@
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 08:17:50 by ohachami          #+#    #+#             */
-/*   Updated: 2023/12/30 15:46:18 by ohachami         ###   ########.fr       */
+/*   Updated: 2023/12/31 16:07:52 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,17 +25,16 @@ Cat::~Cat( void ){
 }
 
 Cat::Cat(const Cat& object){
+	livingBrain = NULL;
 	std::cout << "Copy constructor Cat called"<< std::endl;
     *this = object;
-    
 }
 
 Cat& Cat::operator=(const Cat& object){
     this->type = object.type;
     if (livingBrain)
 		delete livingBrain;
-	livingBrain = new Brain();
-	*this->livingBrain = *object.livingBrain;
+	livingBrain = new Brain(*object.livingBrain);
 	return *this;
 }
 

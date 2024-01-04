@@ -6,7 +6,7 @@
 #    By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/22 16:09:34 by ohachami          #+#    #+#              #
-#    Updated: 2023/12/28 11:16:06 by ohachami         ###   ########.fr        #
+#    Updated: 2023/12/31 09:22:52 by ohachami         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,9 @@ HEADER = ClapTrap.hpp
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
+
+%.o : %.cpp $(HEADER)
+		$(CC) -c  $(CPPFLAGS) $< -o $@
 
 $(NAME): $(OBJ) $(HEADER)
 	$(CC) $(CPPFLAGS) $(OBJ) -o $(NAME)

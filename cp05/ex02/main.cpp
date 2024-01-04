@@ -5,26 +5,33 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/04 22:16:16 by ohachami          #+#    #+#             */
-/*   Updated: 2023/12/31 09:56:16 by ohachami         ###   ########.fr       */
+/*   Created: 2023/12/31 11:58:36 by ohachami          #+#    #+#             */
+/*   Updated: 2024/01/04 16:54:02 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
+#include "Form.hpp"
 
+int main()
+{
+	try{
+		Bureaucrat Hamada("Hamada", 50);
+		Form A4("A4", 0, 20, 30);
 
-int main( void ) {
-	ClapTrap player("player");
-	FragTrap enemy("enemy");
-
-	player.attack("enemy");
-	enemy.takeDamage(50);
-	player.beRepaired(3);
-	enemy.beRepaired(3);
-	enemy.attack("player");
-	player.takeDamage(50);
-	player.beRepaired(3);
-	enemy.highFivesGuys();
-	return 0;
+		std::cout << Hamada << std::endl;
+		Hamada.BureaucratIncrease();
+		Hamada.BureaucratIncrease();
+		Hamada.BureaucratIncrease();
+		Hamada.BureaucratIncrease();
+		std::cout << Hamada << std::endl;
+		Hamada.BureaucratDecrease();
+		std::cout << Hamada << std::endl;
+		std::cout << A4 << std::endl;
+		A4.beSigned(Hamada);
+		std::cout << A4 << std::endl;
+	}
+	catch(std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
 }

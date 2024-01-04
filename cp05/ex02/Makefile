@@ -6,22 +6,22 @@
 #    By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/22 16:09:34 by ohachami          #+#    #+#              #
-#    Updated: 2023/12/31 09:23:11 by ohachami         ###   ########.fr        #
+#    Updated: 2024/01/03 21:50:26 by ohachami         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ScavTrap
+NAME = Bureaucrat
 
 CC= c++
 
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = 	ClapTrap.cpp\
-		ScavTrap.cpp\
+SRC = 	Bureaucrat.cpp\
+		Form.cpp\
 		main.cpp
 
-HEADER =	ClapTrap.hpp\
-			ScavTrap.hpp
+HEADER = Bureaucrat.hpp\
+		Form.hpp
 
 OBJ = $(SRC:.cpp=.o)
 

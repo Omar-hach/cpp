@@ -6,7 +6,7 @@
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/29 10:48:37 by ohachami          #+#    #+#             */
-/*   Updated: 2023/12/30 10:01:04 by ohachami         ###   ########.fr       */
+/*   Updated: 2023/12/31 13:48:39 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,19 @@
 Brain::Brain( void ){
 	std::cout << "Constructor Brain called"<< std::endl;
     ideas = new std::string[100];
+    for(int i = 0; i < 100; i++)
+	    this->ideas[i] = "eat, sleep, have kids";
 }
 
 Brain::~Brain( void ){
     std::cout << "Deconstructor Brain called"<< std::endl;
-    delete[] ideas;
+    if(ideas)
+        delete[] ideas;
 }
 
 Brain::Brain(const Brain& object){
 	std::cout << "Copy constructor Brain called"<< std::endl;
+    ideas = NULL;
    *this = object;
 }
 

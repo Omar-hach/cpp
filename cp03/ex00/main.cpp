@@ -6,7 +6,7 @@
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 22:16:16 by ohachami          #+#    #+#             */
-/*   Updated: 2023/12/30 14:17:13 by ohachami         ###   ########.fr       */
+/*   Updated: 2023/12/31 10:36:06 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int main( void ) {
 	ClapTrap player("player");
 	ClapTrap enemy("enemy");
-
+	
 	player.attack("enemy");
 	enemy.takeDamage(5);
 	player.beRepaired(3);

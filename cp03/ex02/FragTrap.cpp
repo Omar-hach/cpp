@@ -6,7 +6,7 @@
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/26 07:51:45 by ohachami          #+#    #+#             */
-/*   Updated: 2023/12/29 13:00:31 by ohachami         ###   ########.fr       */
+/*   Updated: 2023/12/31 10:16:02 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ FragTrap::FragTrap( void ){
 	this->Energy_points = 100;
 	this->Attack_damage = 30;
 	this->Name = "";
-	std::cout << "FragTrap Constructor called"<< std::endl;
+	std::cout << "FragTrap Default Constructor called"<< std::endl;
 }
 
 FragTrap::FragTrap( std::string Name ){
@@ -25,7 +25,7 @@ FragTrap::FragTrap( std::string Name ){
 	this->Energy_points = 100;
 	this->Attack_damage = 30;
 	this->Name = Name;
-	std::cout << "FragTrap Default constructor called"<< std::endl;
+	std::cout << "FragTrap constructor called"<< std::endl;
 }
 
 FragTrap::~FragTrap( void ){
@@ -46,5 +46,13 @@ FragTrap& FragTrap::operator=(const FragTrap& object){
 }
 
 void FragTrap::highFivesGuys( void ){
+	if(this->Hit_points  < 1){
+		std::cout << "FragTrap " << this->Name << " is already Dead" << std::endl;
+		return ;
+	}
+	if(this->Energy_points < 1){
+		std::cout << "FragTrap " << this->Name << " does not have enough energy" << std::endl;
+		return ;
+	}
     std::cout << "Give me your hand, let's goooooo" << std::endl;
 }

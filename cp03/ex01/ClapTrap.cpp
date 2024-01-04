@@ -6,7 +6,7 @@
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/22 07:48:18 by ohachami          #+#    #+#             */
-/*   Updated: 2023/12/30 15:43:36 by ohachami         ###   ########.fr       */
+/*   Updated: 2023/12/31 09:35:27 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void ClapTrap::takeDamage(unsigned int amount){
 		return ;
 	}
 	std::cout << "ClapTrap " << this->Name << " has taken " << amount << " damage points" << std::endl;
-	if(this->Hit_points < (int)amount){
+	if(this->Hit_points < amount){
 		std::cout << "ClapTrap " << this->Name << " has been destroyed" << std::endl;
 		this->Hit_points = 0;
 		return ;

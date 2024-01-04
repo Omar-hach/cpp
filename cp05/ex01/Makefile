@@ -6,22 +6,22 @@
 #    By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/22 16:09:34 by ohachami          #+#    #+#              #
-#    Updated: 2023/12/31 09:23:11 by ohachami         ###   ########.fr        #
+#    Updated: 2024/01/03 21:53:17 by ohachami         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ScavTrap
+NAME = Form
 
 CC= c++
 
-CPPFLAGS = -Wall -Wextra -Werror -std=c++98
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98 #-fsanitize=address
 
-SRC = 	ClapTrap.cpp\
-		ScavTrap.cpp\
+SRC = Form.cpp\
+		Bureaucrat.cpp\
 		main.cpp
 
-HEADER =	ClapTrap.hpp\
-			ScavTrap.hpp
+HEADER = Bureaucrat.hpp\
+		Form.hpp
 
 OBJ = $(SRC:.cpp=.o)
 

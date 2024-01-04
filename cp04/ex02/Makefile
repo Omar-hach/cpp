@@ -6,7 +6,7 @@
 #    By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/22 16:09:34 by ohachami          #+#    #+#              #
-#    Updated: 2023/12/29 10:49:47 by ohachami         ###   ########.fr        #
+#    Updated: 2023/12/31 15:21:19 by ohachami         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,14 +34,17 @@ OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
 
+%.o : %.cpp $(HEADER)
+		$(CC) -c  $(CPPFLAGS) $< -o $@
+
 $(NAME): $(OBJ) $(HEADER)
 	$(CC) $(CPPFLAGS) $(OBJ) -o $(NAME)
 
 clean:
-	rm -f $(OBJ)
+	rm -rf $(OBJ)
 
 fclean: clean
-	rm -f $(NAME)
+	rm -rf $(NAME)
 
 re: fclean all
 
