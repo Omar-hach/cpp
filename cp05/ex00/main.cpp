@@ -6,7 +6,7 @@
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/31 11:58:36 by ohachami          #+#    #+#             */
-/*   Updated: 2024/01/03 19:19:16 by ohachami         ###   ########.fr       */
+/*   Updated: 2024/01/09 00:28:21 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int main()
 {
     try{
-        Bureaucrat Hamada("Hamada", 50);
+        Bureaucrat Hamada("Hamada", 2);
         Bureaucrat yassir;
 
         std::cout << Hamada << std::endl;
@@ -31,6 +31,6 @@ int main()
     }
     catch(std::exception &e)
     {
-        std::cout << e.what() << std::endl;
+        std::cout << "something wrong!!! : " << e.what() << std::endl;
     }
 }

@@ -6,7 +6,7 @@
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/31 11:58:33 by ohachami          #+#    #+#             */
-/*   Updated: 2024/01/03 19:08:22 by ohachami         ###   ########.fr       */
+/*   Updated: 2024/01/09 00:24:01 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,16 +30,11 @@ class Bureaucrat{
 		int getGrade( void ) const;
 		class GradeTooHighException : public std::exception{
 			public:
-				const char* what() const throw() {
-					return "The Grade is Too High";
-				}
+				const char* what() const throw();
 		};
 		class GradeTooLowException : public std::exception{
 			public:
-				const char* what() const throw() {
-					return "The Grade is Too Low";
-				}
-			
+				const char* what() const throw();
 		};
 };
 

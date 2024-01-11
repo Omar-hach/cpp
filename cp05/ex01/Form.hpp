@@ -6,7 +6,7 @@
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/31 11:59:17 by ohachami          #+#    #+#             */
-/*   Updated: 2024/01/04 16:53:58 by ohachami         ###   ########.fr       */
+/*   Updated: 2024/01/09 00:38:28 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,15 +34,11 @@ class Form{
 		int getGradeExecute( void ) const;
 		class GradeTooHighException : public std::exception{
 			public:
-				const char *what() const throw(){
-					return "too high";
-				}
+				const char* what() const throw();
 		};
 		class GradeTooLowException : public std::exception{
 			public:
-				const char *what() const throw(){
-					return "too low";
-				}
+				const char* what() const throw();
 		};
 };
 

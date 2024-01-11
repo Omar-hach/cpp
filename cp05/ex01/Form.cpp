@@ -6,7 +6,7 @@
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/31 11:59:13 by ohachami          #+#    #+#             */
-/*   Updated: 2024/01/04 17:45:01 by ohachami         ###   ########.fr       */
+/*   Updated: 2024/01/09 01:24:31 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,17 @@ Form::Form(const Form& object){
 	*this = object;
 }
 
+Form& Form::operator=(const Form& object){
+	this->Name = object.Name;
+	this->isSigned = object.isSigned;
+	this->GradeExecute = object.GradeExecute;
+	this->GradeSign = object.GradeSign;
+	return *this;
+}
+
 void Form::beSigned( Bureaucrat& slave){
-	slave.signForm( *this );
-	if(slave.getGrade() <= this->GradeSign){
+	if(slave.getGrade() <= this->GradeSign)
 		this->isSigned = 1;
-	}
 	else
 		throw (GradeTooLowException());
 }
@@ -77,11 +83,12 @@ std::ostream &operator<<(std::ostream &out, const Form& object){
 	return out;
 }
 
-
-Form& Form::operator=(const Form& object){
-	this->Name = object.Name;
-	this->isSigned = object.isSigned;
-	this->GradeExecute = object.GradeExecute;
-	this->GradeSign = object.GradeSign;
-	return *this;
+const char* Form::GradeTooHighException::what() const throw() {
+	return "The Grade is Too High for The Form";
 }
+
+const char* Form::GradeTooLowException::what() const throw() {
+	return "The Grade is Too Low for The Form";
+}
+
+

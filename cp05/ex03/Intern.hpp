@@ -1,36 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Intern.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/31 11:58:36 by ohachami          #+#    #+#             */
-/*   Updated: 2024/01/09 06:29:33 by ohachami         ###   ########.fr       */
+/*   Created: 2024/01/08 23:07:59 by ohachami          #+#    #+#             */
+/*   Updated: 2024/01/10 04:49:16 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef INTERN_HPP
+# define INTERN_HPP
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 
-int main()
-{
-	try{
-		Bureaucrat Hamada("Hamada", 140);
-		ShrubberyCreationForm A4("paul");
-		PresidentialPardonForm A3("loller");
-
-		std::cout << Hamada << std::endl;
-		std::cout << A4 << std::endl;
-		Hamada.signForm(A4);
-		Hamada.executeForm(A4);
-		Hamada.executeForm(A4);
-		Hamada.executeForm(A4);
-		std::cout << A4 << std::endl;
-	}
-	catch(std::exception &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-}
+class Intern{
+    public:
+        Intern( void );
+        ~Intern( void );
+        Intern(const Intern& object);
+        Intern& operator=(const Intern& object);
+        AForm *makeForm(std::string Target, std::string FormName);
+		class InternException : public std::exception{
+			public:
+				const char* what() const throw();
+		};
+};
+#endif

@@ -6,7 +6,7 @@
 #    By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/22 16:09:34 by ohachami          #+#    #+#              #
-#    Updated: 2024/01/03 21:50:32 by ohachami         ###   ########.fr        #
+#    Updated: 2024/01/10 03:23:41 by ohachami         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,11 +17,19 @@ CC= c++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC = 	Bureaucrat.cpp\
-		Form.cpp\
+		AForm.cpp\
+		ShrubberyCreationForm.cpp\
+		RobotomyRequestForm.cpp\
+		PresidentialPardonForm.cpp\
+		Intern.cpp\
 		main.cpp
 
 HEADER = Bureaucrat.hpp\
-		Form.hpp
+		Intern.hpp\
+		ShrubberyCreationForm.hpp\
+		RobotomyRequestForm.hpp\
+		PresidentialPardonForm.hpp\
+		AForm.hpp
 
 OBJ = $(SRC:.cpp=.o)
 
