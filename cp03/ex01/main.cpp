@@ -6,7 +6,7 @@
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 22:16:16 by ohachami          #+#    #+#             */
-/*   Updated: 2023/12/31 09:54:41 by ohachami         ###   ########.fr       */
+/*   Updated: 2024/01/21 13:24:54 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,6 @@ int main( void ) {
 	enemy.guardGate();
 	enemy.takeDamage(100);
 	enemy.guardGate();
+	std::cout << enemy.Name << std::endl;
 	return 0;
 }

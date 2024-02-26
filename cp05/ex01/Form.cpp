@@ -6,7 +6,7 @@
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/31 11:59:13 by ohachami          #+#    #+#             */
-/*   Updated: 2024/01/09 01:24:31 by ohachami         ###   ########.fr       */
+/*   Updated: 2024/02/23 05:19:28 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@ Form::Form( void ){
 	this->isSigned = 0;
 	this->GradeExecute = 150;
 	this->GradeSign = 150;
-	std::cout << "Constructor called"<< std::endl;
+	//std::cout << "Constructor called"<< std::endl;
 }
 
 Form::~Form( void ){
-	std::cout << "Deconstructor called"<< std::endl;
+	//std::cout << "Deconstructor called"<< std::endl;
 }
 
 Form::Form( std::string Name, bool isSigned, int GradeExecute, int GradeSign ){
@@ -33,11 +33,11 @@ Form::Form( std::string Name, bool isSigned, int GradeExecute, int GradeSign ){
 	this->isSigned = isSigned;
 	this->GradeExecute = GradeExecute;
 	this->GradeSign = GradeSign;
-	std::cout << "Constructor called"<< std::endl;
+	//std::cout << "Constructor called"<< std::endl;
 }
 
 Form::Form(const Form& object){
-	std::cout << "Copy Constructor called"<< std::endl;
+	//std::cout << "Copy Constructor called"<< std::endl;
 	*this = object;
 }
 

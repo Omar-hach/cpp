@@ -6,7 +6,7 @@
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/31 11:58:30 by ohachami          #+#    #+#             */
-/*   Updated: 2024/01/09 00:28:04 by ohachami         ###   ########.fr       */
+/*   Updated: 2024/02/23 05:18:47 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 Bureaucrat::Bureaucrat( void ){
     this->Name = "A Bureaucrat";
     this->Grade = 150;
-    std::cout << "Constructor called"<< std::endl;
+    //std::cout << "Constructor called"<< std::endl;
 }
 
 Bureaucrat::~Bureaucrat( void ){
-    std::cout << "Deconstructor called"<< std::endl;
+    //std::cout << "Deconstructor called"<< std::endl;
 }
 
 Bureaucrat::Bureaucrat( std::string Name, int Grade){
@@ -27,13 +27,13 @@ Bureaucrat::Bureaucrat( std::string Name, int Grade){
         throw (GradeTooHighException());
     else if (Grade > 150)
         throw (GradeTooLowException());
-    std::cout << "Constructor called"<< std::endl;
+    //std::cout << "Constructor called"<< std::endl;
     this->Name = Name;
     this->Grade = Grade;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat& object){
-    std::cout << "Copy Constructor called"<< std::endl;
+    //std::cout << "Copy Constructor called"<< std::endl;
     *this = object;
 }
 

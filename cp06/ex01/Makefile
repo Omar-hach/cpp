@@ -6,20 +6,20 @@
 #    By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/22 16:09:34 by ohachami          #+#    #+#              #
-#    Updated: 2024/01/03 21:50:14 by ohachami         ###   ########.fr        #
+#    Updated: 2024/02/10 13:09:00 by ohachami         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Bureaucrat
+NAME = Serializer
 
 CC= c++
 
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = 	Bureaucrat.cpp\
+SRC = 	Serializer.cpp\
 		main.cpp
 
-HEADER = Bureaucrat.hpp
+HEADER = Serializer.hpp
 
 OBJ = $(SRC:.cpp=.o)
 

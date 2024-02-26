@@ -6,7 +6,7 @@
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 16:59:21 by ohachami          #+#    #+#             */
-/*   Updated: 2024/01/08 05:41:12 by ohachami         ###   ########.fr       */
+/*   Updated: 2024/02/23 05:22:12 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,22 +17,22 @@ PresidentialPardonForm::PresidentialPardonForm( void ){
     this->setGradeSign(25);
     this->setGradeExecute(5);
     std::cout << "PresidentialPardonForm " << this << std::endl;
-	std::cout << "Constructor PresidentialPardonForm called"<< std::endl;
+	//std::cout << "Constructor PresidentialPardonForm called"<< std::endl;
 }
 
 PresidentialPardonForm::PresidentialPardonForm( std::string Target ){
 	this->Target = Target;
     this->setGradeSign(25);
     this->setGradeExecute(5);
-    std::cout << "Constructor PresidentialPardonForm called"<< std::endl;
+    //std::cout << "Constructor PresidentialPardonForm called"<< std::endl;
 }
 
 PresidentialPardonForm::~PresidentialPardonForm( void ){
-    std::cout << "Deconstructor PresidentialPardonForm called"<< std::endl;
+    //std::cout << "Deconstructor PresidentialPardonForm called"<< std::endl;
 }
 
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm& object){
-    std::cout << "Copy Constructor PresidentialPardonForm called"<< std::endl;
+    //std::cout << "Copy Constructor PresidentialPardonForm called"<< std::endl;
 	*this = object;
 }
 

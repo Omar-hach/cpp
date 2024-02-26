@@ -6,7 +6,7 @@
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/31 11:58:36 by ohachami          #+#    #+#             */
-/*   Updated: 2024/01/09 01:20:05 by ohachami         ###   ########.fr       */
+/*   Updated: 2024/02/23 23:54:31 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int main()
 {
 	try{
 		Bureaucrat Hamada("Hamada", 50);
-		Form A4("A4", 0, 20, 30);
+		Form A4("A4", 0, 40, 60);
 
 		std::cout << Hamada << std::endl;
 		Hamada.BureaucratIncrease();

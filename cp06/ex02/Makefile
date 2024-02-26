@@ -6,20 +6,26 @@
 #    By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/22 16:09:34 by ohachami          #+#    #+#              #
-#    Updated: 2024/01/03 21:50:14 by ohachami         ###   ########.fr        #
+#    Updated: 2024/02/19 21:54:14 by ohachami         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Bureaucrat
+NAME = Identifier
 
 CC= c++
 
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = 	Bureaucrat.cpp\
+SRC = 	Base.cpp\
+		A.cpp\
+		B.cpp\
+		C.cpp\
 		main.cpp
 
-HEADER = Bureaucrat.hpp
+HEADER = Base.hpp\
+		A.hpp\
+		B.hpp\
+		C.hpp
 
 OBJ = $(SRC:.cpp=.o)
 

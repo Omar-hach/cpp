@@ -6,20 +6,20 @@
 #    By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/22 16:09:34 by ohachami          #+#    #+#              #
-#    Updated: 2024/01/03 21:50:14 by ohachami         ###   ########.fr        #
+#    Updated: 2024/01/15 05:04:34 by ohachami         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Bureaucrat
+NAME = ScalarConverter
 
 CC= c++
 
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = 	Bureaucrat.cpp\
+SRC = 	ScalarConverter.cpp\
 		main.cpp
 
-HEADER = Bureaucrat.hpp
+HEADER = ScalarConverter.hpp
 
 OBJ = $(SRC:.cpp=.o)
 

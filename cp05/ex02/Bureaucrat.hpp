@@ -6,13 +6,12 @@
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/31 11:58:33 by ohachami          #+#    #+#             */
-/*   Updated: 2024/01/09 01:25:26 by ohachami         ###   ########.fr       */
+/*   Updated: 2024/02/23 23:25:49 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BUREAUCRAT_HPP
 # define BUREAUCRAT_HPP
-# include<iostream>
 #include "AForm.hpp"
 
 class AForm;

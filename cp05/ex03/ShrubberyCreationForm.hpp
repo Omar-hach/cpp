@@ -6,13 +6,14 @@
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 16:59:57 by ohachami          #+#    #+#             */
-/*   Updated: 2024/01/08 05:37:55 by ohachami         ###   ########.fr       */
+/*   Updated: 2024/02/23 23:24:40 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SHRUBBERYCREATIONFORM_HPP
 # define SHRUBBERYCREATIONFORM_HPP
 #include "AForm.hpp"
+#include<fstream>
 
 class ShrubberyCreationForm : public AForm{
 	private:

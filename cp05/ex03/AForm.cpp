@@ -6,7 +6,7 @@
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 17:00:05 by ohachami          #+#    #+#             */
-/*   Updated: 2024/01/11 06:22:18 by ohachami         ###   ########.fr       */
+/*   Updated: 2024/02/23 05:24:06 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,15 @@ AForm::AForm( void ){
 	this->isSigned = 0;
 	this->GradeExecute = 150;
 	this->GradeSign = 150;
-	std::cout << "Constructor AForm called"<< std::endl;
+	//std::cout << "Constructor AForm called"<< std::endl;
 }
 
 AForm::~AForm( void ){
-	std::cout << "Deconstructor AForm called"<< std::endl;
+	//std::cout << "Deconstructor AForm called"<< std::endl;
 }
 
 AForm::AForm( std::string Name, bool isSigned, int GradeExecute, int GradeSign ){
-	std::cout << "Constructor AForm called"<< std::endl;
+	//std::cout << "Constructor AForm called"<< std::endl;
 	if(GradeExecute > 150 || GradeSign > 150)
 		throw(GradeTooLowException());
 	else if(GradeExecute < 1 || GradeSign < 1)
@@ -37,7 +37,7 @@ AForm::AForm( std::string Name, bool isSigned, int GradeExecute, int GradeSign )
 }
 
 AForm::AForm(const AForm& object){
-	std::cout << "Copy Constructor AForm called"<< std::endl;
+	//std::cout << "Copy Constructor AForm called"<< std::endl;
 	*this = object;
 }
 

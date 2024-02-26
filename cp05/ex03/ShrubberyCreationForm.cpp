@@ -6,34 +6,34 @@
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 16:59:54 by ohachami          #+#    #+#             */
-/*   Updated: 2024/01/09 06:30:34 by ohachami         ###   ########.fr       */
+/*   Updated: 2024/02/23 23:42:31 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
-#include<fstream>
+
 
 ShrubberyCreationForm::ShrubberyCreationForm( void ){
     this->Target = "Shrubbery Creation Form";
     this->setGradeSign(145);
     this->setGradeExecute(137);
     std::cout << "ShrubberyCreationForm " << this << std::endl;
-	std::cout << "Constructor ShrubberyCreationForm called"<< std::endl;
+	//std::cout << "Constructor ShrubberyCreationForm called"<< std::endl;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm( std::string Target ){
 	this->Target = Target;
     this->setGradeSign(145);
     this->setGradeExecute(137);
-    std::cout << "Constructor ShrubberyCreationForm called"<< std::endl;
+    //std::cout << "Constructor ShrubberyCreationForm called"<< std::endl;
 }
 
 ShrubberyCreationForm::~ShrubberyCreationForm( void ){
-    std::cout << "Deconstructor ShrubberyCreationForm called"<< std::endl;
+    //std::cout << "Deconstructor ShrubberyCreationForm called"<< std::endl;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& object){
-    std::cout << "Copy Constructor ShrubberyCreationForm called"<< std::endl;
+    //std::cout << "Copy Constructor ShrubberyCreationForm called"<< std::endl;
 	*this = object;
 }
 
@@ -46,9 +46,10 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationF
 
 void ShrubberyCreationForm::execute(const Bureaucrat& executor) const{
     std::ofstream outfile;
+    std::string title = this->Target + std::string("_shrubbery");
 
     if(this->isitSigned() && this->getGradeExecute() >= executor.getGrade()){
-        outfile.open(this->Target + "_shrubbery");
+        outfile.open(title.c_str());
         outfile <<"      ccee88oo                   ccee88oo"<< std::endl;
         outfile <<"  C8O8O8Q8PoOb o8oo          C8O8O8Q8PoOb o8oo"<< std::endl;
         outfile <<" dOB69QO8PdUOpugoO9bD       dOB69QO8PdUOpugoO9bD"<< std::endl;
@@ -83,8 +84,8 @@ void ShrubberyCreationForm::execute(const Bureaucrat& executor) const{
         outfile <<"                                    |||\\/"<< std::endl;
         outfile <<"                                    |||||"<< std::endl;
         outfile <<"                              .....//||||\\\\...."<< std::endl;
+        outfile.close();
     }
-	else{
+	else
 		throw (FormNotExecuted());
-	}
 }

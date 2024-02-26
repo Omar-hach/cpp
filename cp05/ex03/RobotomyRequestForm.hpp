@@ -6,13 +6,14 @@
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 16:59:52 by ohachami          #+#    #+#             */
-/*   Updated: 2024/01/08 05:37:42 by ohachami         ###   ########.fr       */
+/*   Updated: 2024/02/23 23:24:55 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ROBOTOMYREQUESTFORM_HPP
 # define ROBOTOMYREQUESTFORM_HPP
-#include "AForm.hpp"
+# include "AForm.hpp"
+# include <cstdlib>
 
 class RobotomyRequestForm : public AForm{
 	private:

@@ -6,21 +6,21 @@
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 23:07:57 by ohachami          #+#    #+#             */
-/*   Updated: 2024/01/11 04:26:26 by ohachami         ###   ########.fr       */
+/*   Updated: 2024/02/23 23:13:01 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Intern.hpp"
 Intern::Intern( void ){
-    std::cout << "Constructor Intern called"<< std::endl;
+    //std::cout << "Constructor Intern called"<< std::endl;
 }
 
 Intern::~Intern( void ){
-    std::cout << "Deconstructor Intern called"<< std::endl;
+    //std::cout << "Deconstructor Intern called"<< std::endl;
 }
 
 Intern::Intern(const Intern& object){
-    std::cout << "Copy Constructor Intern called"<< std::endl;
+    //std::cout << "Copy Constructor Intern called"<< std::endl;
 	*this = object;
 }
 
@@ -44,7 +44,6 @@ AForm *Intern::makeForm(std::string FormName, std::string Target){
     for (int j = 0; j < 3; j++){
         if (j != i)
             delete f[j];
-        std::cout << j << std::endl;
     }
     if(i == 3){
         std::cout << "Intern couldn't creates " << FormName << " Named "  << Target

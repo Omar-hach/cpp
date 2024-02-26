@@ -6,13 +6,14 @@
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 16:59:28 by ohachami          #+#    #+#             */
-/*   Updated: 2024/01/08 05:27:54 by ohachami         ###   ########.fr       */
+/*   Updated: 2024/02/23 23:25:23 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PRESIDENTIALPARDONFORM_HPP
 # define PRESIDENTIALPARDONFORM_HPP
 #include "AForm.hpp"
+#include <cstdlib>
 
 class PresidentialPardonForm : public AForm{
 	private:
