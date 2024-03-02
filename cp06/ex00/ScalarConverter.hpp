@@ -6,15 +6,13 @@
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 04:33:06 by ohachami          #+#    #+#             */
-/*   Updated: 2024/02/04 05:20:26 by ohachami         ###   ########.fr       */
+/*   Updated: 2024/03/02 03:13:02 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SCALARCONVERTER_HPP
 # define SCALARCONVERTER_HPP
 # include <iostream>
-# include <cctype>
-# include <sstream>
 # include <iomanip> 
 
 class ScalarConverter{

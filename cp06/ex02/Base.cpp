@@ -6,7 +6,7 @@
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/11 10:32:52 by ohachami          #+#    #+#             */
-/*   Updated: 2024/02/27 00:45:49 by ohachami         ###   ########.fr       */
+/*   Updated: 2024/03/02 03:03:15 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,8 @@ Base *generate(void){
 
 
 void identify(Base* p){
-    if(p == NULL){
+    if(p == NULL)
         std::cout << "this is a NULL pointer" << std::endl;
-    }
     else if (dynamic_cast<A *>(p))
         std::cout << "the type of this object is A" << std::endl;            
     else if(dynamic_cast<B *>(p))
@@ -49,7 +48,6 @@ void identify(Base* p){
     else
         std::cout << "the type of this object is just a base" << std::endl;
 }
-
 
 void identify(Base& p){
     int type = 0;

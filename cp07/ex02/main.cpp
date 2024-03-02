@@ -6,14 +6,14 @@
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 23:41:41 by ohachami          #+#    #+#             */
-/*   Updated: 2024/02/26 23:11:40 by ohachami         ###   ########.fr       */
+/*   Updated: 2024/02/28 02:21:17 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Array.hpp"
 
-//#define MAX_VAL 750
-#define MAX_VAL 10
+#define MAX_VAL 4
+//#define MAX_VAL 10
 
 int main(int, char**)
 {
@@ -51,7 +51,8 @@ int main(int, char**)
 	}
 	try
 	{
-		numbers[MAX_VAL] = 0;
+		numbers[MAX_VAL] = 4;
+		std::cout << numbers[MAX_VAL] << std::endl;
 	}
 	catch(const std::exception& e)
 	{
