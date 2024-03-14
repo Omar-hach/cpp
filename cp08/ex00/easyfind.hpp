@@ -6,7 +6,7 @@
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 23:44:39 by ohachami          #+#    #+#             */
-/*   Updated: 2024/03/02 11:44:15 by ohachami         ###   ########.fr       */
+/*   Updated: 2024/03/06 13:07:23 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,12 @@ int	easyfind(T& list, int& y){
 	for(typename T::iterator it = list.begin(); it != list.end(); it++)
 	{
 		if(*it == y){
-			std::cout << "right" << std::endl;
+			std::cout << "this element exist" << std::endl;
 			return 0;
 		}
 	}
-	std::cout << "wrong" << std::endl;
+	std::cout << "this element don't exist" << std::endl;
+	throw std::length_error("exceed the max cap of element");
 	return 1;
 }
 

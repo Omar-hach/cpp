@@ -5,19 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/19 22:30:05 by ohachami          #+#    #+#             */
-/*   Updated: 2024/03/06 10:07:28 by ohachami         ###   ########.fr       */
+/*   Created: 2024/03/06 13:22:40 by ohachami          #+#    #+#             */
+/*   Updated: 2024/03/07 10:30:34 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "iter.hpp"
+#include "BitcoinExchange.hpp"
 
-
-int main( void ) {
-	int len = 6;
-	int array[6] = { 6, 8, 9 , 0 , 11, 84};
-	iter<int>(array, len, print<int>);
-	std::string words[6] = { "bunch", "of", "information" , "writhing" , "in", "english"};
-	iter<std::string>(words, len, print<std::string>);
-	return 0;
+int main(int argc, char **argv)
+{
+    if (argc < 2){
+        std::cout << "Error: could not open file." << std::endl;
+        return 1;
+    }
+    else if(argc > 2){
+        std::cout << "Error: too much argement." << std::endl;
+        return 1;
+    }
+	std::ifstream infile(argv[1]);
+    
 }

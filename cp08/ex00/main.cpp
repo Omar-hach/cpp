@@ -6,7 +6,7 @@
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 23:52:15 by ohachami          #+#    #+#             */
-/*   Updated: 2024/03/02 11:31:54 by ohachami         ###   ########.fr       */
+/*   Updated: 2024/03/03 10:51:25 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,6 @@
 int main()
 {
     std::list<int> lst;
-
-    
-    
     lst.push_front(12);
     lst.push_front(5);
     lst.push_front(-6);
@@ -29,8 +26,8 @@ int main()
     easyfind(lst, value);
     value = -6;
     easyfind(lst, value);
-    std::vector<int> vct;
 
+    std::vector<int> vct;
     vct.push_back(12);
     vct.push_back(5);
     vct.push_back(-6);

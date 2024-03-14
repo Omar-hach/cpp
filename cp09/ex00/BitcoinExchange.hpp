@@ -1,36 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Span.hpp                                           :+:      :+:    :+:   */
+/*   BitcoinExchange.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/24 23:45:23 by ohachami          #+#    #+#             */
-/*   Updated: 2024/03/05 15:39:08 by ohachami         ###   ########.fr       */
+/*   Created: 2024/03/05 15:51:12 by ohachami          #+#    #+#             */
+/*   Updated: 2024/03/07 12:32:45 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SPAN_HPP
-# define SPAN_HPP
+#ifndef BITCOINEXCHANGE_HPP
+# define BITCOINEXCHANGE_HPP
 # include <iostream>
-# include <algorithm>
-# include <vector>
+# include <fstream>
 # include <iterator>
+# include <list>
+# include <stack>
 
-class Span{
-	private:
-		unsigned int N;
-		std::vector<int> vct;
+class BitcoinExchange{
+    private:
 	public:
-		Span( void );
-		Span( unsigned int N );
-		~Span( void );
-		Span(const Span& object);
-		Span& operator=( const Span& object );
-		void addNumber( int num );
-		int shortestSpan( void );
-		int longestSpan( void );
+		BitcoinExchange( void );
+		~BitcoinExchange( void );
 };
+
+/*template< typename T >
+int	MutantStack(T& list, int& y){
+	for(typename T::iterator it = list.begin(); it != list.end(); it++)
+	{
+		if(*it == y){
+			std::cout << "right" << std::endl;
+			return 0;
+		}
+	}
+	std::cout << "wrong" << std::endl;
+	return 1;
+}*/
 
 
 #endif
+

@@ -1,23 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   PmergeMe.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/19 22:30:05 by ohachami          #+#    #+#             */
-/*   Updated: 2024/03/06 10:07:28 by ohachami         ###   ########.fr       */
+/*   Created: 2024/03/07 12:07:12 by ohachami          #+#    #+#             */
+/*   Updated: 2024/03/07 12:07:25 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "iter.hpp"
+#include "PmergeMe.hpp"
 
-
-int main( void ) {
-	int len = 6;
-	int array[6] = { 6, 8, 9 , 0 , 11, 84};
-	iter<int>(array, len, print<int>);
-	std::string words[6] = { "bunch", "of", "information" , "writhing" , "in", "english"};
-	iter<std::string>(words, len, print<std::string>);
-	return 0;
-}
