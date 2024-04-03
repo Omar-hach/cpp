@@ -6,7 +6,7 @@
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 23:45:26 by ohachami          #+#    #+#             */
-/*   Updated: 2024/03/06 13:06:53 by ohachami         ###   ########.fr       */
+/*   Updated: 2024/04/03 20:11:31 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,13 @@ Span::Span(const Span& object){
 Span& Span::operator=( const Span& object ){
 	(void)object;
 	return *this;
+}
+
+void Span::addNumber( std::vector<int>::iterator begin ,  std::vector<int>::iterator end ){
+	int dis = std::distance(begin, end);
+	if(vct.size() + dis > this->N)
+		throw std::length_error("exceed the max cap of element");
+	vct.insert(vct.end(),begin, end);
 }
 
 void Span::addNumber( int num ){

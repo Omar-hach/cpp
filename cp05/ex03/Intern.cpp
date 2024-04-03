@@ -6,7 +6,7 @@
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 23:07:57 by ohachami          #+#    #+#             */
-/*   Updated: 2024/02/23 23:13:01 by ohachami         ###   ########.fr       */
+/*   Updated: 2024/03/30 18:21:13 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ AForm *Intern::makeForm(std::string FormName, std::string Target){
         std::cout << "Intern couldn't creates " << FormName << " Named "  << Target
 		<< " Because The Form Name is Wrong" << std::endl;
         throw (InternException());
-        return (nullptr);
+        return (NULL);
     }
     std::cout << "Intern creates "<< FormName << " Named "  << Target <<  std::endl;
     return (f[i]);

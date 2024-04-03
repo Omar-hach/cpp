@@ -6,7 +6,7 @@
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 13:18:53 by ohachami          #+#    #+#             */
-/*   Updated: 2024/03/06 11:39:50 by ohachami         ###   ########.fr       */
+/*   Updated: 2024/04/03 20:02:02 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,17 @@ int main()
     mstack.push(5);
     mstack.push(737);
     mstack.push(0);
+    if(mstack.empty())
+        std::cout << "MutantStack is empty" << std::endl;
+    else
+        std::cout << "MutantStack is not empty" << std::endl;
     MutantStack<int>::iterator it = mstack.begin();
     MutantStack<int>::iterator ite = mstack.end();
     ++it;
     --it;
     while (it != ite)
-    {
-        std::cout << *it << std::endl;
-        ++it;
-    }
+        std::cout << *(it++) << std::endl;
     std::stack<int> s(mstack);
+    std::stack<int> s2 = mstack;
     return 0;
 }

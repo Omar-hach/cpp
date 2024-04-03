@@ -6,7 +6,7 @@
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/31 11:58:36 by ohachami          #+#    #+#             */
-/*   Updated: 2024/02/24 00:06:52 by ohachami         ###   ########.fr       */
+/*   Updated: 2024/03/30 18:21:31 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int main()
 	RobotomyRequestForm A5("robot");
 	Intern someRandomIntern;
 	AForm* rrf;
-	rrf = nullptr;
+	rrf = NULL;
 	
 	std::cout << "--------Shrubbery Creation Form------------" << std::endl;
 	try{
@@ -34,7 +34,7 @@ int main()
 	}
 	if(rrf)
 		delete rrf;
-	rrf = nullptr;
+	rrf = NULL;
 	std::cout << "--------Presidential Pardon Form------------" << std::endl;
 	try{
 		rrf = someRandomIntern.makeForm("Presidential Pardon", "Bender");
@@ -47,7 +47,7 @@ int main()
 	}
 	if(rrf)
 		delete rrf;
-	rrf = nullptr;
+	rrf = NULL;
 	std::cout << "--------Robotomy Request Form------------" << std::endl;
 	try{
 		rrf = someRandomIntern.makeForm("Robotomy Request", "Bender");

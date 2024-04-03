@@ -6,7 +6,7 @@
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 17:24:32 by ohachami          #+#    #+#             */
-/*   Updated: 2023/12/27 09:55:48 by ohachami         ###   ########.fr       */
+/*   Updated: 2024/04/03 05:01:24 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 const int Fixed::fractBits = 8;
 
 Fixed::Fixed( void ){
+
 	this->integer = 0;
 	std::cout << "Default constructor called"<< std::endl;
 }
