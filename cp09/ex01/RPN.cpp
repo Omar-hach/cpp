@@ -6,7 +6,7 @@
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 15:52:26 by ohachami          #+#    #+#             */
-/*   Updated: 2024/03/24 02:37:18 by ohachami         ###   ########.fr       */
+/*   Updated: 2024/06/09 07:53:46 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,53 +15,49 @@
 RPN::RPN( void ){
 }
 
-int opr_doing(std::stack<char> stck, int sum)
+int opr_doing(std::stack<char> stck, int sum, int &size)
 {
-    int num1 = 0;
+    int count = 1;
+    int num = 0;
     char opr = stck.top();
     stck.pop();
     if(!std::isdigit(stck.top())){
-        sum += opr_doing(stck, sum);
-        stck.pop();
-        stck.pop();
+        sum += opr_doing(stck, sum, ++count);
+        while(!std::isdigit(stck.top())){
+            stck.pop();
+            count++;
+        }
     }
     else
         sum = static_cast<int>(stck.top() - '0');
-    stck.pop();
-    if(!std::isdigit(stck.top())){
-        num1 += opr_doing(stck, num1);
-    }
+    while(count--)
+        stck.pop();
+    if(!std::isdigit(stck.top()))
+        num += opr_doing(stck, num, ++count);
     else
-        num1 = static_cast<int>(stck.top() - '0');
+        num = static_cast<int>(stck.top() - '0');
     if(opr == '+')
-        sum += num1;
+        sum += num;
     else if(opr == '-')
-        sum = num1 - sum;
+        sum = num - sum;
     else if(opr == '*')
-        sum *= num1;
+        sum *= num;
     else if(opr == '/' && sum == 0)
        throw  std::invalid_argument("Error: can't divide by zero");
     else if(opr == '/')
-        sum = num1 / sum;
+        sum = num / sum;
     stck.pop();
+    size = !stck.empty();
     return sum;
 }
 
-RPN::RPN( std::string arg ){
-    int k =0;
+RPN::RPN( std::string arg )
+{
+    int k = 0;
     int number = 0;
     int symble = 0;
     std::stack<char> stck;
     std::string symbles = "+*-/";
-    /*while(arg[k] == ' ')
-        k++;
-    if(!std::isdigit(arg[k]) 
-        && arg[k] != ' ' && arg[k] != '-' 
-        && arg[k] != '*' && arg[k] != '/' 
-        && arg[k] != '+' && arg[k] != ' '){
-            throw  std::invalid_argument("Error: this argument don't fellow the Reverse Polish notation");
-        }
-    stck.push(arg[k]);*/
     if(arg.find_first_not_of("0123456789+*/- ") != std::string::npos)
         throw  std::invalid_argument("Error: this argument don't fellow the Reverse Polish notation.");
     while (arg[k]){
@@ -74,14 +70,12 @@ RPN::RPN( std::string arg ){
         if(arg[++k] && arg[k] != ' ' && arg[k - 1] != ' ')
             throw  std::invalid_argument("Error: this argument has a number longer than 1 digits");
     }
-    if(std::isdigit(stck.top()) || (number - symble != 1))
+    if(std::isdigit(stck.top()) || (number != symble + 1))
         throw  std::invalid_argument("Error: this argument don't fellow the Reverse Polish notation");
-    /*while(stck.size() != 0)
-    {
-        std::cout << stck.top() <<  "=size(" << stck.size() << ")" << std::endl;
-        stck.pop();
-    }*/
-    std::cout << opr_doing(stck , 0) << std::endl;
+    int result = opr_doing(stck , 0, k);
+    if(k)
+        throw  std::invalid_argument("Error: this argument don't fellow the Reverse Polish notation");
+    std::cout << result << std::endl;
 }
 
 RPN::~RPN( void ){

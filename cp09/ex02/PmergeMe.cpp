@@ -6,7 +6,7 @@
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 12:07:12 by ohachami          #+#    #+#             */
-/*   Updated: 2024/05/07 14:54:11 by ohachami         ###   ########.fr       */
+/*   Updated: 2024/05/08 18:40:36 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,100 +117,7 @@ std::vector<unsigned int> merge_sort_vect(std::vector<unsigned int> &vct)
 	return sorted_vect;
 }
 
-
 //////////////////////////////////////////////////////////////////////////
-
-void generate_Jacobsthal_order_deque(std::deque<unsigned int> &order,unsigned int size)
-{
-	unsigned int num_before_before = 0;
-	unsigned int num_before = 1;
-	unsigned int num;
-	if(size > 0)
-		order.push_back(1);
-	for (unsigned int i = 0; i < size && size > 1;i++)
-	{
-		num = num_before + 2 * num_before_before;
-		for(unsigned int j = num; j > num_before && order.size() < size ;j--)
-		{
-			if(j > size)
-				continue;
-			order.push_back(j);
-		}
-		num_before_before = num_before;
-		num_before = num;
-	}
-}
-
-void insert_elem_deque(std::deque<unsigned int> &deq, unsigned int elem)
-{
-	unsigned int min;
-	unsigned int max;
-	
-	min = 0;
-	max = deq.size();
-	for (unsigned int i = (max + min) / 2; max != min; i = (max + min) / 2)
-	{
-		if(elem >= deq.at(i))
-			min = i + 1;
-		else if(elem < deq.at(i))
-			max = i;		
-	}
-	deq.insert(deq.begin() + max, elem);
-}
-
-
-void binary_search_insert_deque(std::deque<unsigned int> &deq,
-						std::deque< std::deque<unsigned int> > &pairs, int last_elem)
-{
-	std::deque< unsigned int > order;
-
-	generate_Jacobsthal_order_deque(order, pairs.size() - 1);
-	for (unsigned int j = 0; j < order.size() ; j++)
-		insert_elem_deque(deq, pairs[order.at(j)].at(1));
-	if (last_elem > -1)
-		insert_elem_deque(deq, static_cast<unsigned int>(last_elem));
-		
-}
-
-void insert_sort_pairs_deque(std::deque< std::deque<unsigned int> > &pairs ,unsigned int pairs_num)
-{
-	if (pairs_num < 2)
-		return;
-	insert_sort_pairs_deque(pairs, pairs_num - 1);
-	for (int j = pairs_num - 2; j > -1 && pairs[j].at(0) > pairs[j + 1].at(0); j--)
-		std::swap(pairs[j], pairs[j + 1]);
-	return;
-}
-
-std::deque<unsigned int> merge_sort_deque(std::deque<unsigned int> &deq)
-{
-	unsigned int pairs_num = (deq.size() / 2);
-	if(pairs_num == 0)
-		return deq;
-	std::deque< std::deque<unsigned int> > pairs(pairs_num);
-	std::deque< unsigned int > sorted_deque;
-
-	int last_elem = -1;
-	if(deq.size() % 2)
-		last_elem = deq.back();
-	for(unsigned int i = 0; i != pairs_num * 2; i++)
-		pairs.at(i / 2).push_back(deq.at(i));
-	for(unsigned int i = 0; i != pairs_num; i++)
-	{
-		if(pairs[i].at(0) < pairs[i].at(1))
-			std::swap(pairs[i].at(0), pairs[i].at(1));
-	}
-	insert_sort_pairs_deque(pairs, pairs_num);
-	sorted_deque.push_back(pairs[0].at(1));
-	for(unsigned int i = 0; i != pairs.size() ; i++)
-		sorted_deque.push_back(pairs[i].at(0));
-	if(deq.size() > 2)
-		binary_search_insert_deque(sorted_deque, pairs, last_elem);
-	return sorted_deque;
-}
-
-//////////////////////////////////////////////////////////////////////////
-
 
 void generate_Jacobsthal_order_list(std::list<unsigned int> &order,unsigned int size)
 {
@@ -274,7 +181,6 @@ void binary_search_insert_list(std::list<unsigned int> &lst,
 
 void insert_sort_pairs_list(std::list< std::list<unsigned int> > &pairs ,unsigned int pairs_num)
 {
-	
 	if (pairs_num < 2)
 		return;
 	insert_sort_pairs_list(pairs, pairs_num - 1);
@@ -304,10 +210,8 @@ std::list<unsigned int> merge_sort_list(std::list<unsigned int> &lst)
 	if(lst.size() % 2)
 		last_elem = lst.back();
 	for(std::list< std::list<unsigned int> >::iterator it_pair = pairs.begin(); it_pair != pairs.end(); it_pair++){
-		(*it_pair).push_back(*it);
-		it++;
-		(*it_pair).push_back(*it);
-		it++;
+		(*it_pair).push_back(*(it++));
+		(*it_pair).push_back(*(it++));
 	}
 	for(std::list< std::list<unsigned int> >::iterator it_pair = pairs.begin(); it_pair != pairs.end(); it_pair++)
 	{
@@ -316,10 +220,37 @@ std::list<unsigned int> merge_sort_list(std::list<unsigned int> &lst)
 	}
 	insert_sort_pairs_list(pairs, pairs_num);
 	sorted_list.push_back(pairs.front().front());
-	for(std::list< std::list<unsigned int> >::iterator it_pair = pairs.begin(); it_pair != pairs.end(); it_pair++){
+	for(std::list< std::list<unsigned int> >::iterator it_pair = pairs.begin(); it_pair != pairs.end(); it_pair++)
 		sorted_list.push_back((*it_pair).back());
-	}
 	if(lst.size() > 2)
 		binary_search_insert_list(sorted_list, pairs, last_elem);
 	return sorted_list;
 }
+
+PmergeMe::PmergeMe(std::vector<unsigned int> &vct){
+	std::cout << "Before: " ;
+	for(std::vector<unsigned int>::iterator it = vct.begin(); it != vct.end(); it++)
+		std::cout << *it << " ";
+	std::cout << std::endl;
+
+	clock_t start = clock();
+	vct = merge_sort_vect(vct);
+	clock_t end = clock();
+	double diff =  double(end - start);
+	
+	std::cout << "After:  " ;
+	for(std::vector<unsigned int>::iterator it = vct.begin(); it != vct.end(); it++)
+		std::cout << *it << " ";
+	std::cout << std::endl;
+	std::cout << "Time to process a range of " <<  vct.size() << " elements with std::vct : " << diff << " us" << std::endl;
+
+}
+
+PmergeMe::PmergeMe(std::list<unsigned int> &lst){
+	clock_t start = clock();
+	lst = merge_sort_list(lst);
+	clock_t end = clock();
+	
+	std::cout << "Time to process a range of " <<  lst.size() << " elements with std::list : " << double(end - start) << " us" << std::endl;
+}
+

@@ -6,7 +6,7 @@
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 15:51:10 by ohachami          #+#    #+#             */
-/*   Updated: 2024/03/30 23:28:46 by ohachami         ###   ########.fr       */
+/*   Updated: 2024/06/05 17:08:05 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ double check_quantity(std::string line)
 	double quantity = std::strtod(line.c_str(), &rest);
 	std::string rest_str(rest);
 	if(std::find_if(rest_str.begin(), rest_str.end(), is_not_space) != rest_str.end()){
-			std::cout << "Error: not a number." << std::endl;
-			return -1;
+		std::cout << "Error: not a number." << std::endl;
+		return -1;
 	}
 	if( quantity < 0 ){
 		std::cout << "Error: not a positive number. " << std::endl;
@@ -120,7 +120,7 @@ BitcoinExchange::BitcoinExchange( void ){
 		getline(infile ,line);
 		if(line.empty())
 			continue;
-		price = std::strtod(line.c_str() + line.find('|') + 1, NULL);
+		price = std::strtod(line.c_str() + line.find(',') + 1, NULL);
 		date = std::strtod(line.c_str(), &mounth) * 416;
 		date += std::strtod(mounth, &day) * (-32);
 		date += (-1) * std::strtod(day, NULL);

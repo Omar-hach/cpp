@@ -6,7 +6,7 @@
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 12:07:06 by ohachami          #+#    #+#             */
-/*   Updated: 2024/05/07 12:53:27 by ohachami         ###   ########.fr       */
+/*   Updated: 2024/05/08 18:35:42 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,17 @@
 # include <iostream>
 # include <vector>
 # include <list>
-# include <deque>
 # include <ctime>
 # include <iterator>
 # include <algorithm>
 
 class PmergeMe{
     private:
-
-	public:
 		PmergeMe( void );
+		
+	public:
+		PmergeMe( std::vector<unsigned int> &vct );
+		PmergeMe( std::list<unsigned int> &lst );
 		~PmergeMe( void );
 		PmergeMe(const PmergeMe& object);
 		PmergeMe& operator=( const PmergeMe& object );
@@ -35,12 +36,6 @@ void insert_sort_pairs(std::vector< std::vector<unsigned int> > &pairs ,unsigned
 void binary_search_insert(std::vector<unsigned int> &vct, std::vector< std::vector<unsigned int> > &pairs, int last_elem);
 void insert_elem(std::vector<unsigned int> &vct, unsigned int elem);
 void generate_Jacobsthal_order(std::vector<unsigned int> &order,unsigned int size);
-
-std::deque<unsigned int> merge_sort_deque(std::deque<unsigned int> &vct);
-void insert_sort_pairs_deque(std::deque< std::deque<unsigned int> > &pairs ,unsigned int pairs_num);
-void binary_search_insert_deque(std::deque<unsigned int> &vct, std::deque< std::deque<unsigned int> > &pairs, int last_elem);
-void insert_elem_deque(std::deque<unsigned int> &vct, unsigned int elem);
-void generate_Jacobsthal_order_deque(std::deque<unsigned int> &order,unsigned int size);
 
 
 std::list<unsigned int> merge_sort_list(std::list<unsigned int> &vct);
