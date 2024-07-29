@@ -6,7 +6,7 @@
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 15:52:29 by ohachami          #+#    #+#             */
-/*   Updated: 2024/06/09 07:06:51 by ohachami         ###   ########.fr       */
+/*   Updated: 2024/07/25 23:54:24 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,14 @@
 
 class RPN{
 	private:
+		int hit_last;
 		RPN( void );
 	public:
 		RPN( std::string opr );
 		~RPN( void );
 		RPN(const RPN& object);
 		RPN& operator=( const RPN& object );
+		int opr_doing(std::stack<char> stck, int sum);
 };
 
 #endif

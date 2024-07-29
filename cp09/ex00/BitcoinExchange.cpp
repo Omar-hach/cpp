@@ -6,7 +6,7 @@
 /*   By: ohachami <ohachami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 15:51:10 by ohachami          #+#    #+#             */
-/*   Updated: 2024/06/05 17:08:05 by ohachami         ###   ########.fr       */
+/*   Updated: 2024/07/27 22:52:22 by ohachami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ double check_line(std::string line)
 void Exchange_Rate_calcul( std::ifstream &infile , std::map<double, double> &ExchangeRate){
 	std::string line;
 	double  quantity = 0;
-	int  date = 0;
+	int  date = 0; 
 	std::map<double, double>::iterator it;
 
 	if( line.compare("date,exchange_rate") )
